@@ -15,7 +15,7 @@
     <form id="form1" runat="server">
         <div style="position: absolute; left: 100px; top: 50px; width: 200px; border: 1px solid red; background-color: #008080;">
             <asp:Label ID="Label1" runat="server" Text="LABLE" ForeColor="#FF5050"></asp:Label><br /><br />
-            <asp:Button ID="Button1" runat="server" Text="Button"/> <br />
+            <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click"/> <br />
             <asp:Calendar ID="Calendar1" runat="server" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" ShowGridLines="True" Width="220px">
                 <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
                 <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
