@@ -4,5 +4,4 @@
 **/packages/
 *.suo
 *.ods#
-BaseAspNet/.vs
 .vs
