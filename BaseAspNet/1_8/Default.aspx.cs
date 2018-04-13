@@ -16,7 +16,7 @@ namespace _1_8
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Label1.Text = "Текущее время default: " + DateTime.Now.ToLongTimeString();
+            Label1.Text = "Текущее  время  default: " + DateTime.Now.ToLongTimeString();
         }
     }
 }
