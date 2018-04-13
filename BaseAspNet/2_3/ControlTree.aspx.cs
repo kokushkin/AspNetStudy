@@ -11,12 +11,26 @@ namespace _2_3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            foreach (Control control in Page.Controls)
-            {
-                Response.Write(control.GetType().ToString() + " - <b>" + control.ID + "</b><br/>");
-            }
-
+            DisplayControl(Page.Controls, 0);
             Response.Write("<hr/>");
+        }
+
+        private void DisplayControl(ControlCollection controls, int depth)
+        {
+            foreach (Control control in controls)
+            {
+                // Количество отступов в представлении дерева элементов управления
+                Response.Write(new String('-', depth * 4) + "> ");
+
+                // Отобразить элемент управления
+                Response.Write(control.GetType().ToString() + " - <b>" +
+                  control.ID + "</b><br />");
+
+                if (control.Controls != null)
+                {
+                    DisplayControl(control.Controls, depth + 1);
+                }
+            }
         }
     }
 }
