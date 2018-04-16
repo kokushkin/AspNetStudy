@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace _2_3
@@ -11,6 +12,17 @@ namespace _2_3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Page.Header.Title = "Структура страницы ASP.NET";
+            Page.Header.Description = "Описание возможностей ASP.NET по динамическому использованию элементов на странице";
+            Page.Header.Keywords = "C#, .NET, ASP.NET";
+
+            //А вот как можно добавить в заголовок другой метадескриптор
+            HtmlMeta metaTag = new HtmlMeta();
+            metaTag.HttpEquiv = "Content-Type";
+            metaTag.Content = "text/html; charset=utf-8";
+            Page.Header.Controls.Add(metaTag);
+
+
             DisplayControl(Page.Controls, 0);
             Response.Write("<hr/>");
         }
