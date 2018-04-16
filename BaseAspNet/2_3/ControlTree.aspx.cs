@@ -25,6 +25,44 @@ namespace _2_3
 
             DisplayControl(Page.Controls, 0);
             Response.Write("<hr/>");
+
+
+
+
+
+            //добавляем динамическую кнопку
+            //каждый раз ее нужно создавать заново.
+            //если это повторная отправка которая была вызвана щедчком по кнопке, то тут мы ее все равно создаем и 
+            //только тогда будет вызван обработчик, присоединенный ниже
+            
+            // Создать новый объект кнопки. 
+            Button newButton = new Button();
+
+            // Присвоить некоторый текст и идентификатор для будущего извлечения. 
+            newButton.Text = "* Dynamic Button *";
+            newButton.ID = "newButton";
+
+            // Добавить кнопку к панели. 
+            MainPanel.Controls.Add(newButton);
+
+            // Подключить обработчик событий Button.Click
+            newButton.Click += dynamicButton_Click;
+            
+        }
+
+        private void dynamicButton_Click(object sender, EventArgs e)
+        {
+
+            //удаление динамичской кнопки, возможно меет места в сценариях, когда нужно чтобы после щелчка по ней она исчезла.
+            //Хотя если щелкнуть затем по другой кнопке, Этот обработчик не вызовиться и она опять появиться
+            // Поиск динамической кнопки в коллекции Page.Controls
+            Button foundButton = (Button)Page.FindControl("newButton");
+            // Удаление кнопки
+            if (foundButton != null)
+                foundButton.Parent.Controls.Remove(foundButton);
+
+
+            return;
         }
 
         private void DisplayControl(ControlCollection controls, int depth)
