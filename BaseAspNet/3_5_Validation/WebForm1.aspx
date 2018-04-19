@@ -9,11 +9,13 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Label runat="server">Name:</asp:Label>
             <asp:TextBox runat="server" Width="200px" ID="Name" />
             <asp:RequiredFieldValidator runat="server" ID="ValidateName" ControlToValidate="Name"
                 ErrorMessage="Имя пустое" Display="dynamic">*
             </asp:RequiredFieldValidator>
             <br />
+            <asp:Label runat="server">Date:</asp:Label>
             <asp:TextBox runat="server" Width="200px" ID="DayOff" />
             <asp:RangeValidator runat="server" ID="ValidateDayOff2" ControlToValidate="DayOff"
                 MinimumValue="01/01/2012" MaximumValue="31/12/2012" Type="Date"
@@ -21,26 +23,31 @@
                 SetFocusOnError="True">*
             </asp:RangeValidator>
             <br />
+            <asp:Label runat="server">Age:</asp:Label>
             <asp:TextBox runat="server" Width="200px" ID="Age" />
             <asp:CompareValidator runat="server" ID="ValidateAge" ControlToValidate="Age"
                 ValueToCompare="18" Type="Integer"
                 Operator="GreaterThanEqual" ErrorMessage="Вы должны быть старше 18 лет" Display="dynamic">*
             </asp:CompareValidator>
             <br />
+            <asp:Label runat="server">Password:</asp:Label>
             <asp:TextBox TextMode="Password" runat="server" Width="200px" ID="Password" />
             <br />
+            <asp:Label runat="server">Password:</asp:Label>
             <asp:TextBox runat="server" TextMode="Password" Width="200px" ID="Password2" />
             <asp:CompareValidator runat="server" ControlToValidate="Password2" ControlToCompare="Password" Type="String"
                 ErrorMessage="Пароли не совпадают" Display="dynamic" ID="Comparevalidator1" Name="Comparevalidator1">
-		 <img src="imgError.gif" alt="Пароли не совпадают" />
+		 <img src="errorIcon.gif" alt="Пароли не совпадают" />
             </asp:CompareValidator>
             <br />
+            <asp:Label runat="server">Email:</asp:Label>
             <asp:TextBox runat="server" Width="200px" ID="Email" />
             <asp:RegularExpressionValidator runat="server" ID="ValidateEmail"
                 ControlToValidate="Email" ValidationExpression=".*@.{2,}\..{2,}"
                 ErrorMessage="Некорректный формат E-mail" Display="dynamic">*
             </asp:RegularExpressionValidator>
             <br />
+            <asp:Label runat="server">ID(/5):</asp:Label>
             <asp:TextBox runat="server" Width="200px" ID="EmpID" />
             <asp:CustomValidator runat="server" ID="ValidateEmpID2" ControlToValidate="EmpID"
                 ClientValidationFunction="EmpIDClientValidate"
@@ -57,15 +64,17 @@
             <br />
             <asp:ValidationSummary runat="server" ID="Summary" DisplayMode="BulletList" 
         HeaderText="<b>Пожалуйста, исправьте следующие ошибки: </b>" ShowSummary="true" ShowMessageBox="true" />
+            <br />
+            <asp:Button ID="Button" runat="server" Text="Button" OnClick="Button_Click" />
+            <br />
+            <asp:CheckBox ID="chkEnableValidators" runat="server" OnCheckedChanged="OptionsChanged" Checked="True"/>Validators enabled
+            <br />
+            <asp:CheckBox ID="chkEnableClientSide" runat="server" OnCheckedChanged="OptionsChanged" Checked="True" />Client-side validation enabled
+            <br />
+            <asp:CheckBox ID="chkShowMsgBox" runat="server" OnCheckedChanged="OptionsChanged" Checked="True"/>Show message box
+            <br />
+            <asp:CheckBox ID="chkShowSummary" runat="server" OnCheckedChanged="OptionsChanged" Checked="True"/>Show summary
         </div>
     </form>
-    <br />
-    <asp:CheckBox ID="chkEnableValidators" runat="server" OnCheckedChanged="OptionsChanged"/>Validators enabled
-    <br />
-    <asp:CheckBox ID="chkEnableClientSide" runat="server" OnCheckedChanged="OptionsChanged" />Client-side validation enabled
-    <br />
-    <asp:CheckBox ID="chkShowMsgBox" runat="server" OnCheckedChanged="OptionsChanged"/>Show summary
-    <br />
-    <asp:CheckBox ID="chkShowSummary" runat="server" OnCheckedChanged="OptionsChanged"/>Show message box
 </body>
 </html>

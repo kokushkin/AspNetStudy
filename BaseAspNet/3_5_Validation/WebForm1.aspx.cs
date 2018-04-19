@@ -49,5 +49,9 @@ namespace _3_5_Validation
             Summary.ShowSummary = chkShowSummary.Checked;
         }
 
+        protected void Button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
