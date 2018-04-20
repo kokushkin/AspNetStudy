@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:AdRotator AdvertisementFile="~/ads.xml" runat="server" Target="_blank" />
+            <asp:AdRotator AdvertisementFile="ads.xml" runat="server" Target="_blank" />
         </div>
     </form>
 </body>
