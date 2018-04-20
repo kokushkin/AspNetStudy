@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_4_BulletedList", "3_4_Bul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_5_Validation", "3_5_Validation\3_5_Validation.csproj", "{BD1D60B0-170F-4112-82D2-9736C48CF1E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_6_AdRotator", "3_6_AdRotator\3_6_AdRotator.csproj", "{225BE1C7-523B-48DE-8FB6-17C1B11EC360}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,10 @@ Global
 		{BD1D60B0-170F-4112-82D2-9736C48CF1E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD1D60B0-170F-4112-82D2-9736C48CF1E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD1D60B0-170F-4112-82D2-9736C48CF1E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{225BE1C7-523B-48DE-8FB6-17C1B11EC360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{225BE1C7-523B-48DE-8FB6-17C1B11EC360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{225BE1C7-523B-48DE-8FB6-17C1B11EC360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{225BE1C7-523B-48DE-8FB6-17C1B11EC360}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

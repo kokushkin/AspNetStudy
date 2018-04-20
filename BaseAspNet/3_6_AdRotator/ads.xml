@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Advertisements>
+  <Ad>
+    <ImageUrl>http://www.almightyretail.com/img/hdr_logo.gif</ImageUrl>
+    <NavigateUrl>http://www.mysite.com</NavigateUrl>
+    <AlternateText>Some text</AlternateText>
+    <Impressions>20</Impressions>
+    <Keyword>Some keyword</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>http://americadirectllc.com/grf/hm/hdr_logo.gif</ImageUrl>
+    <NavigateUrl>http://www.microsoft.com/</NavigateUrl>
+    <AlternateText>Microsoft Company</AlternateText>
+    <Impressions>20</Impressions>
+    <Keyword>Microsoft</Keyword>
+  </Ad>
+</Advertisements>
