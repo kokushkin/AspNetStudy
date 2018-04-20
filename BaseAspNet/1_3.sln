@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_6_AdRotator", "3_6_AdRota
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_6_Calendar", "3_6_Calendar\3_6_Calendar.csproj", "{34C74AC6-54CF-4990-AFD1-CE5D7A99CBF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_2_asax", "4_2_aspx\4_2_asax.csproj", "{2EAEA113-5776-44E9-B191-0F0C3D153431}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,10 @@ Global
 		{34C74AC6-54CF-4990-AFD1-CE5D7A99CBF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34C74AC6-54CF-4990-AFD1-CE5D7A99CBF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34C74AC6-54CF-4990-AFD1-CE5D7A99CBF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EAEA113-5776-44E9-B191-0F0C3D153431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EAEA113-5776-44E9-B191-0F0C3D153431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EAEA113-5776-44E9-B191-0F0C3D153431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EAEA113-5776-44E9-B191-0F0C3D153431}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
