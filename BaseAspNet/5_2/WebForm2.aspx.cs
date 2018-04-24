@@ -11,11 +11,19 @@ namespace _5_2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (PreviousPage != null)
+            WebForm1 prevPage = PreviousPage as WebForm1;
+            if (prevPage != null)
             {
-                Label1.Text = "Заголовок предыдущей страницы " + PreviousPage.Header.Title;
-            }
-        }
+                if(!PreviousPage.IsValid)
+                {
+                    Response.Redirect(Request.UrlReferrer.AbsolutePath + "?err=true");
+                }
+                else
+                {
+                    Label1.Text = prevPage.FullName;
+                }
+            }               
+         }
     }
     
 }

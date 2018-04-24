@@ -8,10 +8,16 @@
     </head>
     <body>    
         <form id="form1" runat="server">        
-            <div>            
+            <div>
                 Введите данные:            
-                <asp:TextBox runat="server" ID="txtFirstName"></asp:TextBox>              
-                <asp:TextBox runat="server" ID="txtLastName"></asp:TextBox>            
+                <asp:TextBox runat="server" ID="txtFirstName"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ID="ValidateName" ControlToValidate="txtFirstName"
+                    ErrorMessage="Имя пустое" Display="dynamic" EnableClientScript="false">*
+                </asp:RequiredFieldValidator>
+                <asp:TextBox runat="server" ID="txtLastName"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator1" ControlToValidate="txtLastName"
+                    ErrorMessage="Имя пустое" Display="dynamic" EnableClientScript="false">*
+                </asp:RequiredFieldValidator>
                 <asp:Button runat="server" ID="cmdSubmit" PostBackUrl="WebForm2.aspx" Text="Отправить" />
             </div>    
         </form>
