@@ -16,7 +16,6 @@ namespace _5_1_ViewState
 
         protected void cmdSave_Click(object sender, EventArgs e)
         {
-            return;
             // Сохранить текущий текст        
             SaveAllText(Page.Controls, true);
         }
