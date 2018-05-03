@@ -75,6 +75,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6_3_Procedure", "6_3_Proced
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6_7_DataSet", "6_7_DataSet\6_7_DataSet.csproj", "{3EF1AA26-B1B8-443E-AB9A-A6E291E4B492}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6_8_DataView_Relation_Filter", "6_8_DataView_Relation_Filter\6_8_DataView_Relation_Filter.csproj", "{227FF162-BF31-4608-A2F3-A1D016A6393F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -185,6 +187,10 @@ Global
 		{3EF1AA26-B1B8-443E-AB9A-A6E291E4B492}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EF1AA26-B1B8-443E-AB9A-A6E291E4B492}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EF1AA26-B1B8-443E-AB9A-A6E291E4B492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{227FF162-BF31-4608-A2F3-A1D016A6393F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{227FF162-BF31-4608-A2F3-A1D016A6393F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{227FF162-BF31-4608-A2F3-A1D016A6393F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{227FF162-BF31-4608-A2F3-A1D016A6393F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
