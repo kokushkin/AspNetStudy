@@ -83,6 +83,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7_1_2HashTable", "7_1_2Hash
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7_2_1_SqlDataSource_Select", "7_2_1_SqlDataSource_Select\7_2_1_SqlDataSource_Select.csproj", "{CC436FEA-97D7-41B4-B6C1-012B4272503C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7_2_2Parameters", "7_2_2Parameters\7_2_2Parameters.csproj", "{F14549A3-8761-456F-BF78-EE8A120E2579}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -209,6 +211,10 @@ Global
 		{CC436FEA-97D7-41B4-B6C1-012B4272503C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC436FEA-97D7-41B4-B6C1-012B4272503C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC436FEA-97D7-41B4-B6C1-012B4272503C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F14549A3-8761-456F-BF78-EE8A120E2579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F14549A3-8761-456F-BF78-EE8A120E2579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F14549A3-8761-456F-BF78-EE8A120E2579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F14549A3-8761-456F-BF78-EE8A120E2579}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
