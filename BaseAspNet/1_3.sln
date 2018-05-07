@@ -85,6 +85,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7_2_1_SqlDataSource_Select"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7_2_2Parameters", "7_2_2Parameters\7_2_2Parameters.csproj", "{F14549A3-8761-456F-BF78-EE8A120E2579}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7_2_3Update", "7_2_3Update\7_2_3Update.csproj", "{71FF8DCE-231B-4BAA-B5F1-571FA5984367}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -215,6 +217,10 @@ Global
 		{F14549A3-8761-456F-BF78-EE8A120E2579}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F14549A3-8761-456F-BF78-EE8A120E2579}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F14549A3-8761-456F-BF78-EE8A120E2579}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71FF8DCE-231B-4BAA-B5F1-571FA5984367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71FF8DCE-231B-4BAA-B5F1-571FA5984367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71FF8DCE-231B-4BAA-B5F1-571FA5984367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71FF8DCE-231B-4BAA-B5F1-571FA5984367}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
