@@ -77,6 +77,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6_7_DataSet", "6_7_DataSet\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6_8_DataView_Relation_Filter", "6_8_DataView_Relation_Filter\6_8_DataView_Relation_Filter.csproj", "{227FF162-BF31-4608-A2F3-A1D016A6393F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7_1_1", "7_1_1\7_1_1.csproj", "{13FAD45F-84FB-4D46-8639-222F64B84234}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7_1_2HashTable", "7_1_2HashTable\7_1_2HashTable.csproj", "{B050E734-6925-4185-94EB-0C81A082CF8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -191,6 +195,14 @@ Global
 		{227FF162-BF31-4608-A2F3-A1D016A6393F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{227FF162-BF31-4608-A2F3-A1D016A6393F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{227FF162-BF31-4608-A2F3-A1D016A6393F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13FAD45F-84FB-4D46-8639-222F64B84234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13FAD45F-84FB-4D46-8639-222F64B84234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13FAD45F-84FB-4D46-8639-222F64B84234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13FAD45F-84FB-4D46-8639-222F64B84234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B050E734-6925-4185-94EB-0C81A082CF8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B050E734-6925-4185-94EB-0C81A082CF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B050E734-6925-4185-94EB-0C81A082CF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B050E734-6925-4185-94EB-0C81A082CF8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
