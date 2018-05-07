@@ -19,7 +19,7 @@
                         <select runat="server" id="Select2" datatextfield="Value" datavaluefield="Key" name="Select2" />
                     </td>
                     <td>
-                        <asp:ListBox runat="server" ID="Listbox1" Size="3" DataTextField="Value" DataValueField="Key" />
+                        <asp:ListBox runat="server" ID="Listbox1" DataSource='<%# Food %>' Size="3" DataTextField="Value" DataValueField="Key" />
                     </td>
                     <td>
                         <asp:DropDownList runat="server" ID="DropdownList1" DataTextField="Value" DataValueField="Key" />

@@ -20,18 +20,22 @@ namespace _7_1_2HashTable
                 ht.Add("Key2", "Спагетти");
                 ht.Add("Key3", "Пицца");
 
+                Food = ht;
+
                 // Установить свойство DataSource элементов управления
                 Select1.DataSource = ht;
                 Select2.DataSource = ht;
-                Listbox1.DataSource = ht;
+                //Listbox1.DataSource = ht;
                 DropdownList1.DataSource = ht;
                 CheckList1.DataSource = ht;
-                OptionList1.DataSource = ht;
+                OptionList1.DataSource = ht;                
 
                 // Привязать элементы управления
                 Page.DataBind();
             }
         }
+
+        protected Hashtable Food { get; private set; }
 
         protected void cmdGetSelection_Click(object sender, EventArgs e)
         {
