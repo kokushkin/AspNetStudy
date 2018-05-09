@@ -69,6 +69,8 @@ namespace _6_6_Lib
             cmd.Parameters["@LastName"].Value = emp.LastName;
             cmd.Parameters.Add(new SqlParameter("@EmployeeID", SqlDbType.Int, 4));
             cmd.Parameters["@EmployeeID"].Value = emp.EmployeeID;
+            cmd.Parameters.Add(new SqlParameter("@BirthDate", SqlDbType.DateTime));
+            cmd.Parameters["@BirthDate"].Value = emp.BirthDate;
 
             try
             {
@@ -85,7 +87,7 @@ namespace _6_6_Lib
             }
         }
 
-        public void UpdateEmployee(int EmployeeID, string firstName, string lastName)
+        public void UpdateEmployee(int EmployeeID, string firstName, string lastName, DateTime birthDate)
         {
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand("UpdateEmployee", con);
@@ -97,6 +99,8 @@ namespace _6_6_Lib
             cmd.Parameters["@LastName"].Value = lastName;
             cmd.Parameters.Add(new SqlParameter("@EmployeeID", SqlDbType.Int, 4));
             cmd.Parameters["@EmployeeID"].Value = EmployeeID;
+            cmd.Parameters.Add(new SqlParameter("@BirthDate", SqlDbType.DateTime));
+            cmd.Parameters["@BirthDate"].Value = birthDate;
 
             try
             {
