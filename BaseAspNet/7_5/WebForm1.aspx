@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
        <asp:SqlDataSource ID="getEmployeesSDS" runat="server"
              ConnectionString="<%$ ConnectionStrings:NorthwndConnectionString %>"
-             SelectCommand="SELECT EmployeeID, LastName, FirstName, City FROM Employees" />
+             SelectCommand="SELECT EmployeeID, LastName, FirstName, City FROM Employees"/>
 
         <!-- Извлекает данные из трех связанных таблиц:
              Employees -> EmployeeTerritories (ключ EmployeeID)
@@ -33,7 +33,7 @@
         <!-- Таблица сотрудников - "главная" -->
         <asp:GridView ID="gridEmployees" runat="server" DataSourceID="getEmployeesSDS" DataKeyNames="EmployeeID"
             BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px"
-            CellPadding="6" GridLines="Horizontal" AutoGenerateColumns="False" OnSelectedIndexChanged="gridEmployees_SelectedIndexChanged">
+            CellPadding="6" GridLines="Horizontal" AutoGenerateColumns="False" OnSelectedIndexChanged="gridEmployees_SelectedIndexChanged" AllowSorting="true">
             <Columns>
                 <asp:ButtonField DataTextField="EmployeeID" ButtonType="Button" CommandName="Select" />
                 <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
