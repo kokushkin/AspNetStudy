@@ -208,6 +208,45 @@ namespace _6_6_Lib
             }
         }
 
+        public List<EmployeeDetails> GetEmployees(int startRowIndex, int maximumRows)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand("GetEmployeePage", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@Start", SqlDbType.Int, 4));
+            cmd.Parameters["@Start"].Value = startRowIndex + 1;
+            cmd.Parameters.Add(new SqlParameter("@Count", SqlDbType.Int, 4));
+            cmd.Parameters["@Count"].Value = maximumRows;
+
+            // Создать коллекцию для всех записей о сотрудниках
+            List<EmployeeDetails> employees = new List<EmployeeDetails>();
+
+            try
+            {
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    EmployeeDetails emp = new EmployeeDetails(
+                        (int)reader["EmployeeID"], (string)reader["FirstName"],
+                        (string)reader["LastName"], (DateTime)reader["BirthDate"]);
+                    employees.Add(emp);
+                }
+                reader.Close();
+
+                return employees;
+            }
+            catch (SqlException)
+            {
+                throw new ApplicationException("Ошибка данных");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         public int CountEmployees()
         {
             SqlConnection con = new SqlConnection(connectionString);
