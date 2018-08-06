@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteTemplate.master.cs" Inherits="_2_2_1.SiteTemplate" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table>
+                <tr>
+                    <td style="width: 226px; vertical-align: top;">
+                        <!-- Здесь будут размещаться элементы навигации -->
+                        <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" />
+                        <%--<asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" />--%>
+                        
+                    </td>
+                    <td style="vertical-align: top; color: green; padding-left: 20px">
+                        <%--Специальный элемент навигации--%>
+                        <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+<%--                            <PathSeparatorTemplate>
+                                <asp:Image ID="Image1" runat="server" ImageUrl="~/arrowright.gif"
+                                    GenerateEmptyAlternateText="true" />
+                            </PathSeparatorTemplate>
+                            <RootNodeTemplate>
+                                <b style="border-radius: 4px; border: 2px solid #5cadff; padding: 5px; color: #5cadff">Главная</b>
+                            </RootNodeTemplate>
+                            <CurrentNodeTemplate>
+                                <em>
+                                    <asp:Label ID="Label1" runat="server"
+                                        Text='<%# Eval("title") %>' />
+                                </em>
+                            </CurrentNodeTemplate>--%>
+                        </asp:SiteMapPath>
+                        <asp:HyperLink ID="HyperLink1" runat="server">Next</asp:HyperLink>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server"  ShowStartingNode="false" StartFromCurrentNode="true"/>
+
+    </form>
+</body>
+</html>

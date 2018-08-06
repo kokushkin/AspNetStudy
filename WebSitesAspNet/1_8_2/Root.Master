@@ -1,0 +1,17 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Root.master.cs" Inherits="_1_8_2.Root" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+</head>
+<body style="background: #ccffff">
+    <form id="form1" runat="server">
+    <div>
+        <h1>Корневая мастер-страница</h1>
+        <asp:ContentPlaceHolder id="RootContent" runat="server" />
+    </div>
+    </form>
+</body>
+</html>

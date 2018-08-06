@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/default.aspx" title="Главная"  description="Главная страница сайта">
+      <siteMapNode title="Товары" description="Наши товары" url="~/Products.aspx" >
+        <siteMapNode title="Комплектующие ПК" description="Процессоры, видеокарты, жесткие диски"
+          url="~/Hardware.aspx" />
+        <siteMapNode title="Программы" description="Visual Studio, Expression Blend, Windows Server"
+          url="~/Software.aspx" />
+      </siteMapNode>
+
+      <siteMapNode title="Службы" description="Наши службы тех. поддержки, обучения и др."
+                   url="~/Services.aspx">
+        <siteMapNode title="Обучение" description="Мы научим использовать вас наши программные продукты"
+          url="~/Training.aspx" />
+        <siteMapNode title="Консультации" description="Задавайте ваши вопросы"
+          url="~/Consulting.aspx" />
+        <siteMapNode title="Тех. поддержка" description="Помогаем 24/7"
+          url="~/Support.aspx" />
+      </siteMapNode>
+
+    </siteMapNode>
+</siteMap>

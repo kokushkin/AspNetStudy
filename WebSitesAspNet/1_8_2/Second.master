@@ -1,0 +1,7 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Root.Master" AutoEventWireup="true" CodeBehind="Second.master.cs" Inherits="_1_8_2.Second" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="RootContent" runat="server">
+       <div style="background: #fbccff">
+        <h2>Мастер-страница второго уровня</h2>
+        <asp:ContentPlaceHolder ID="SecondLevel" runat="server" />
+    </div>
+</asp:Content>

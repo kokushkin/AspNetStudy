@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteTemplate.master.cs" Inherits="_1_7_1.SiteTemplate" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div style="background: black; height: 87px; font-weight: bold; font-size: 20px; color: white; font-family: Verdana">
+
+                <img style="float:left" src="headerleft.jpg" />
+                <img style="float:right" src="headerright.jpg" />
+                <br />
+                <asp:ContentPlaceHolder ID="TitleContent" runat="server">
+                    <h1 style="font-size:20px; text-align:center" id="myheader" runat="server">My Site</h1>
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <br /> <br />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <br />
+            <em>Copyright © 2012.</em>
+        </div>
+    </form>
+</body>
+</html>
