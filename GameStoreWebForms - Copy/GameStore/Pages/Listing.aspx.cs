@@ -43,7 +43,7 @@ namespace GameStore.Pages
             return reqValue != null && int.TryParse(reqValue, out page) ? page : 1;
         }
 
-        public IEnumerable<Game> GetGames()
+        protected IEnumerable<Game> GetGames()
         {
             return FilterGames()
                 .OrderBy(g => g.GameId)
