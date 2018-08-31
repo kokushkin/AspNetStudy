@@ -1,5 +1,6 @@
 ﻿using GameStore.Models;
 using GameStore.Models.Repository;
+using GameStore.Pages.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,7 +64,25 @@ namespace GameStore.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+            {
+                int selectedGameId;
+                if (int.TryParse(Request.Form["add"], out selectedGameId))
+                {
+                    Game selectedGame = repository.Games
+                        .Where(g => g.GameId == selectedGameId).FirstOrDefault();
 
+                    if (selectedGame != null)
+                    {
+                        SessionHelper.GetCart(Session).AddItem(selectedGame, 1);
+                        SessionHelper.Set(Session, SessionKey.RETURN_URL,
+                            Request.RawUrl);
+
+                        Response.Redirect(RouteTable.Routes
+                            .GetVirtualPath(null, "cart", null).VirtualPath);
+                    }
+                }
+            }
         }
     }
 }
