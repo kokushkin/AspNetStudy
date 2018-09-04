@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TestAspNet45")]
+[assembly: AssemblyTitle("TestAspNet45MVP1_2_v2")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TestAspNet45")]
+[assembly: AssemblyProduct("TestAspNet45MVP1_2_v2")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ab0a7691-a42f-4722-9763-0da244bd24ae")]
+[assembly: Guid("7c672db0-83a1-4633-a8e7-13ad5b37060f")]
 
 // Version information for an assembly consists of the following four values:
 //

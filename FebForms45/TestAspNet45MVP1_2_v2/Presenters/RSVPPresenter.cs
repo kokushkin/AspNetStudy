@@ -20,6 +20,8 @@ namespace TestAspNet45.Presenters
         IResult IPresenter<GuestResponse>.GetResult(GuestResponse requestData)
         {
             repository.AddResponse(requestData);
+            if (!requestData.WillAttend.HasValue)
+                throw new System.ArgumentNullException("WillAttend равно null");
             if (requestData.WillAttend.Value)
                 return new RedirectResult(@"/Content/seeyouthere.html");
             else
