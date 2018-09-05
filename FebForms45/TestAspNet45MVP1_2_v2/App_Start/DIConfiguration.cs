@@ -14,6 +14,7 @@ namespace TestAspNet45.App_Start
         public static void SetupDI(IKernel kernel)
         {
             kernel.Bind<IPresenter<GuestResponse>>().To<RSVPPresenter>();
+            kernel.Bind<IPresenter<IEnumerable<GuestResponse>>>().To<RSVPPresenter>();
             kernel.Bind<IRepository>().To<MemoryRepository>().InSingletonScope();
         }
     }

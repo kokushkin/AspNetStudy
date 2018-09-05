@@ -95,6 +95,7 @@
     <Content Include="Content\sorryyoucantcome.html" />
     <Content Include="Content\Styles.css" />
     <Content Include="Pages\Default.aspx" />
+    <Content Include="Pages\Summary.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +108,13 @@
     <Compile Include="Pages\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Summary.aspx.cs">
+      <DependentUpon>Summary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Summary.aspx.designer.cs">
+      <DependentUpon>Summary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presenters\Presenter.cs" />
     <Compile Include="Presenters\Results\DataResult.cs" />

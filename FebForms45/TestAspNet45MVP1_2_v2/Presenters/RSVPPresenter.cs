@@ -8,7 +8,8 @@ using TestAspNet45.Presenters.Results;
 
 namespace TestAspNet45.Presenters
 {
-    public class RSVPPresenter : IPresenter<GuestResponse>
+    public class RSVPPresenter : IPresenter<GuestResponse>,
+        IPresenter<IEnumerable<GuestResponse>>
     {
         [Ninject.Inject]
         public IRepository repository { get; set; }
@@ -27,6 +28,17 @@ namespace TestAspNet45.Presenters
                 return new RedirectResult(@"/Content/seeyouthere.html");
             else
                 return new RedirectResult(@"/Content/sorryyoucantcome.html");
+        }
+
+        IResult IPresenter<IEnumerable<GuestResponse>>.GetResult()
+        {
+            return new DataResult<IEnumerable<GuestResponse>>(repository.GetAllResponses());
+        }
+
+        IResult IPresenter<IEnumerable<GuestResponse>>.GetResult
+             (IEnumerable<GuestResponse> requestData)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
