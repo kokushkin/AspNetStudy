@@ -10,6 +10,7 @@ namespace TestAspNet45.Presenters
 {
     public class RSVPPresenter : IPresenter<GuestResponse>
     {
+        [Ninject.Inject]
         public IRepository repository { get; set; }
 
         IResult IPresenter<GuestResponse>.GetResult()

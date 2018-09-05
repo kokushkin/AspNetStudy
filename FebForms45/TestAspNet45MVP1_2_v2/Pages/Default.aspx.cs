@@ -14,12 +14,11 @@ namespace TestAspNet45.Pages
 {
     public partial class Default : System.Web.UI.Page
     {
+        [Ninject.Inject]
         public IPresenter<GuestResponse> Presenter { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Presenter = new RSVPPresenter { repository = new MemoryRepository() };
-
             if (IsPostBack)
             {
                 GuestResponse rsvp =
