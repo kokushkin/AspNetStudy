@@ -75,9 +75,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ComponentError.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="DynamicFailure.aspx" />
     <Content Include="Failure.html" />
+    <Content Include="Global.asax" />
     <Content Include="NotFoundASP.html" />
     <Content Include="NotFoundIIS.html" />
     <Content Include="NotFoundShared.aspx" />
@@ -85,6 +87,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComponentError.aspx.cs">
+      <DependentUpon>ComponentError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComponentError.aspx.designer.cs">
+      <DependentUpon>ComponentError.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -98,6 +107,9 @@
     </Compile>
     <Compile Include="DynamicFailure.aspx.designer.cs">
       <DependentUpon>DynamicFailure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="NotFoundShared.aspx.cs">
       <DependentUpon>NotFoundShared.aspx</DependentUpon>
