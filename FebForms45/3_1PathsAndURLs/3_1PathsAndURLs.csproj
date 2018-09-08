@@ -75,10 +75,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\RequestReporter.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Content\RequestReporter.aspx.cs">
+      <DependentUpon>RequestReporter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\RequestReporter.aspx.designer.cs">
+      <DependentUpon>RequestReporter.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
