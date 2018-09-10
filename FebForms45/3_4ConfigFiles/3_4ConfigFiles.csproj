@@ -88,6 +88,9 @@
     <Compile Include="Admin\FolderForm.aspx.designer.cs">
       <DependentUpon>FolderForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Color.cs" />
+    <Compile Include="ColorCollection.cs" />
+    <Compile Include="ColorSection.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
