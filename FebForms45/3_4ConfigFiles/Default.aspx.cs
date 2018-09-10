@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
@@ -23,5 +24,40 @@ namespace ConfigFiles
                     WebConfigurationManager.AppSettings[key]);
             }
         }
+
+        //public IEnumerable<string> GetConfig()
+        //{
+        //    object config = WebConfigurationManager
+        //        .GetWebApplicationSection("system.web/compilation");
+        //    CompilationSection section = config as CompilationSection;
+
+        //    if (section != null)
+        //    {
+        //        yield return string.Format("debug = {0}<br>targetFramework = {1}<br>batch = {2}",
+        //            section.Debug, section.TargetFramework, section.Batch);
+        //    }
+        //    else
+        //    {
+        //        yield return string.Format("Неправильный тип конфигурации: {0}",
+        //            config.GetType());
+        //    }
+        //}
+
+
+        //public IEnumerable<string> GetConfig()
+        //{
+        //    Configuration config
+        //        = WebConfigurationManager.OpenWebConfiguration(Request.Path);
+
+        //    SystemWebSectionGroup group =
+        //        config.SectionGroups["system.web"] as SystemWebSectionGroup;
+
+        //    CompilationSection compileSection = group.Compilation;
+
+        //    yield return string.Format("debug = {0}<br>targetFramework = {1}<br>batch = {2}",
+        //            compileSection.Debug,
+        //            compileSection.TargetFramework,
+        //            compileSection.Batch);
+        //}
     }
 }
