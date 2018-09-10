@@ -70,12 +70,33 @@ namespace ConfigFiles
         //        defaults.City, defaults.Country, defaults.Language, defaults.Region);
         //}
 
+        //public IEnumerable<string> GetConfig()
+        //{
+        //    Configuration config
+        //        = WebConfigurationManager.OpenWebConfiguration(Request.Path);
+
+        //    ColorSection section = config.Sections["colors"] as ColorSection;
+        //    Color defaultColor = section.Colors[section.Default];
+        //    yield return string.Format(
+        //        @"Цвет по умолчанию - <span style=""color:white;background:{0}"">{1}</span><br><br>",
+        //        defaultColor.Value, defaultColor.Name);
+
+        //    foreach (Color color in section.Colors)
+        //        yield return string.Format(
+        //        @"Цвет - <span style=""color:white;background:{0}"">{1}</span><br><br>",
+        //        color.Value, color.Name);
+        //}
+
+
         public IEnumerable<string> GetConfig()
         {
             Configuration config
                 = WebConfigurationManager.OpenWebConfiguration(Request.Path);
 
-            ColorSection section = config.Sections["colors"] as ColorSection;
+            UserAndPlaceSectiongroup group
+                = (UserAndPlaceSectiongroup)config.SectionGroups["customDefaults"];
+            ColorSection section = group.Colors;
+
             Color defaultColor = section.Colors[section.Default];
             yield return string.Format(
                 @"Цвет по умолчанию - <span style=""color:white;background:{0}"">{1}</span><br><br>",
