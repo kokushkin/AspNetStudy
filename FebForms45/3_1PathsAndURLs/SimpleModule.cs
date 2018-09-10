@@ -19,7 +19,7 @@ namespace PathsAndURLs
             {
                 app.Server.Transfer("/Content/RequestReporter.aspx");
             }
-            WriteMsg("URL запроса: {0}", app.Request.RawUrl);
+            WriteMsg("URL запроса: {0} {1}", app.Request.RawUrl, app.Request.FilePath);
         }
 
         private void WriteMsg(string formatString, params object[] vals)
