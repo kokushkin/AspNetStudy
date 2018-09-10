@@ -16,14 +16,14 @@ namespace ConfigFiles
 
         }
 
-        public IEnumerable<string> GetConfig()
-        {
-            foreach (string key in WebConfigurationManager.AppSettings)
-            {
-                yield return string.Format("{0} {1}", key,
-                    WebConfigurationManager.AppSettings[key]);
-            }
-        }
+        //public IEnumerable<string> GetConfig()
+        //{
+        //    foreach (string key in WebConfigurationManager.AppSettings)
+        //    {
+        //        yield return string.Format("{0} {1}", key,
+        //            WebConfigurationManager.AppSettings[key]);
+        //    }
+        //}
 
         //public IEnumerable<string> GetConfig()
         //{
@@ -59,5 +59,15 @@ namespace ConfigFiles
         //            compileSection.TargetFramework,
         //            compileSection.Batch);
         //}
+
+        public IEnumerable<string> GetConfig()
+        {
+            NewUserDefaultsSection defaults
+                = (NewUserDefaultsSection)WebConfigurationManager
+                      .GetSection("newUserDefaults");
+
+            yield return string.Format("Значения: {0}, {1}, {2}, {3}",
+                defaults.City, defaults.Country, defaults.Language, defaults.Region);
+        }
     }
 }
