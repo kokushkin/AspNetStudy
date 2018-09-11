@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_1PathsAndURLs", "3_1Paths
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_4ConfigFiles", "3_4ConfigFiles\3_4ConfigFiles.csproj", "{1AA669E1-2061-4DCC-9C90-25E6786F19C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_1_AsyncApp", "4_1_AsyncApp\4_1_AsyncApp.csproj", "{0E90E7CE-34D6-4301-82E9-B430AFA14E0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{1AA669E1-2061-4DCC-9C90-25E6786F19C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AA669E1-2061-4DCC-9C90-25E6786F19C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AA669E1-2061-4DCC-9C90-25E6786F19C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E90E7CE-34D6-4301-82E9-B430AFA14E0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E90E7CE-34D6-4301-82E9-B430AFA14E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E90E7CE-34D6-4301-82E9-B430AFA14E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E90E7CE-34D6-4301-82E9-B430AFA14E0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
