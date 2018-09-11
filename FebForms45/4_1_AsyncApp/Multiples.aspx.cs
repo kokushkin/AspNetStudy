@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -26,20 +27,41 @@ namespace AsyncApp
                 = { "http://asp.net", "http://professorweb.ru", "http://google.com" };
             results = new ConcurrentQueue<MultiWebSiteResult>();
 
-            foreach (string targetUrl in targetUrls)
-            {
-                MultiWebSiteResult result = new MultiWebSiteResult { Url = targetUrl };
-                results.Enqueue(result);
+            //foreach (string targetUrl in targetUrls)
+            //{
+            //    MultiWebSiteResult result = new MultiWebSiteResult { Url = targetUrl };
+            //    results.Enqueue(result);
 
-                RegisterAsyncTask(new PageAsyncTask(async () =>
+            //    RegisterAsyncTask(new PageAsyncTask(async () =>
+            //    {
+            //        result.StartTime
+            //                = (long)DateTime.Now.Subtract(Context.Timestamp).TotalMilliseconds;
+            //        string webContent = await new WebClient().DownloadStringTaskAsync(targetUrl);
+            //        result.Length = webContent.Length;
+            //        rep.DataBind();
+            //    }));
+            //}
+
+            RegisterAsyncTask(new PageAsyncTask(async () =>
+            {
+                List<Task> tasks = new List<Task>();
+                foreach (string targetUrl in targetUrls)
                 {
-                    result.StartTime
+                    tasks.Add(Task.Factory.StartNew(() =>
+                    {
+                        MultiWebSiteResult result = new MultiWebSiteResult { Url = targetUrl };
+                        result.StartTime
                             = (long)DateTime.Now.Subtract(Context.Timestamp).TotalMilliseconds;
-                    string webContent = await new WebClient().DownloadStringTaskAsync(targetUrl);
-                    result.Length = webContent.Length;
-                    rep.DataBind();
-                }));
-            }
+                        Task<string> innerTask
+                            = new WebClient().DownloadStringTaskAsync(targetUrl);
+                        innerTask.Wait();
+                        result.Length = innerTask.Result.Length;
+                        results.Enqueue(result);
+                    }));
+                }
+                await Task.WhenAll(tasks);
+                rep.DataBind();
+            }));
         }
 
         public IEnumerable<MultiWebSiteResult> GetResults()
