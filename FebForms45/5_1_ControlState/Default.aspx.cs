@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.ModelBinding;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -21,36 +22,11 @@ namespace ControlState
         {
             User model = new User();
 
-            string name = Request.Form["Name"];
-            if (String.IsNullOrEmpty(name))
-                throw new FormatException("Пожалуйста, введите имя");
-            else if (name.Length < 3 || name.Length > 20)
-                throw new FormatException("Имя должно содержать от 3 до 20 символов");
-            else if (!Regex.IsMatch(name, @"^[A-Za-zА-Яа-я\s]+"))
-                throw new FormatException("В имени допускаются только буквы и пробелы");
+            IValueProvider provider = new FormValueProvider(ModelBindingExecutionContext);
+            if (this.TryUpdateModel<User>(model, provider))
+                return model;
             else
-                model.Name = name;
-
-            string age = Request.Form["age"];
-            if (String.IsNullOrEmpty(age))
-                throw new FormatException("Пожалуйста, введите возраст");
-            else
-            {
-                int ageValue;
-                if (!int.TryParse(age, out ageValue))
-                    throw new FormatException("Некорректное значение для возраста");
-                else
-                {
-                    if (ageValue < 5 || ageValue > 100)
-                        throw new FormatException("Возраст должен находится в пределах от 5 до 100");
-                    else
-                        model.Age = ageValue;
-                }
-            }
-
-            model.Cell = Request.Form["Cell"];
-            model.Zip = Request.Form["Zip"];
-            return model;
+                throw new FormatException("Не удалось привязать модель");
         }
 
         protected void DisplayUser(User user)
