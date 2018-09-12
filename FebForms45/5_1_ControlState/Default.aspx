@@ -13,6 +13,19 @@
     </style>
 </head>
 <body>
+     <asp:PlaceHolder ID="ErrorPanel" Visible="false" runat="server">
+        <div class="error panel">
+            Исправьте следующие ошибки:
+                <ul>
+                    <asp:Repeater ID="Repeater1" SelectMethod="GetModelValidationErrors"
+                        ViewStateMode="Disabled" ItemType="System.String" runat="server">
+                        <ItemTemplate>
+                            <li><%# Item %></li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </ul>
+        </div>
+    </asp:PlaceHolder>
     <div class="panel">
         <form id="form1" runat="server">
             <div>

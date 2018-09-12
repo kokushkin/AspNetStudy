@@ -16,6 +16,8 @@ namespace ControlState
         {
             if (this.IsPostBack)
                 DisplayUser(GetUser());
+
+            ErrorPanel.Visible = !ModelState.IsValid;
         }
 
         protected User GetUser()
@@ -23,10 +25,8 @@ namespace ControlState
             User model = new User();
 
             IValueProvider provider = new FormValueProvider(ModelBindingExecutionContext);
-            if (this.TryUpdateModel<User>(model, provider))
-                return model;
-            else
-                throw new FormatException("Не удалось привязать модель");
+            TryUpdateModel<User>(model, provider);
+            return model;
         }
 
         protected void DisplayUser(User user)
@@ -35,6 +35,15 @@ namespace ControlState
             sage.InnerText = user.Age.ToString();
             scell.InnerText = user.Cell;
             szip.InnerText = user.Zip;
+        }
+
+        public IEnumerable<string> GetModelValidationErrors()
+        {
+            if (!ModelState.IsValid)
+                foreach (KeyValuePair<string, ModelState> pair in ModelState)
+                    foreach (ModelError error in pair.Value.Errors)
+                        if (!String.IsNullOrEmpty(error.ErrorMessage))
+                            yield return error.ErrorMessage;
         }
     }
 }
