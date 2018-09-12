@@ -16,8 +16,6 @@ namespace ControlState
         {
             if (this.IsPostBack)
                 DisplayUser(GetUser());
-
-            ErrorPanel.Visible = !ModelState.IsValid;
         }
 
         protected User GetUser()
@@ -35,15 +33,6 @@ namespace ControlState
             sage.InnerText = user.Age.ToString();
             scell.InnerText = user.Cell;
             szip.InnerText = user.Zip;
-        }
-
-        public IEnumerable<string> GetModelValidationErrors()
-        {
-            if (!ModelState.IsValid)
-                foreach (KeyValuePair<string, ModelState> pair in ModelState)
-                    foreach (ModelError error in pair.Value.Errors)
-                        if (!String.IsNullOrEmpty(error.ErrorMessage))
-                            yield return error.ErrorMessage;
         }
     }
 }
