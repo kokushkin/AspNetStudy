@@ -38,14 +38,8 @@
         </div>
         <div>
             Фильтр:
-            <select name="filterSelect">
-                <asp:Repeater ID="Repeater2" ItemType="Data.CategoryView"
-                    SelectMethod="GetCategories" runat="server">
-                    <ItemTemplate>
-                <option <%# Item.Selected %>><%# Item.Name %></option>
-                    </ItemTemplate>
-                </asp:Repeater>
-            </select>
+            <asp:DropDownList ID="ddList" runat="server"
+                ItemType="System.String" SelectMethod="GetCategories" />
             <button type="submit">Выбрать</button>
         </div>
     </form>

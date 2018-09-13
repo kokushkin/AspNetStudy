@@ -18,23 +18,17 @@ namespace Data
 
     public partial class Default : System.Web.UI.Page
     {
-        public IEnumerable<Game> GetGamesData([Form("filterSelect")] string filter)
+        public IEnumerable<Game> GetGamesData([Control("ddList", "SelectedValue")] string filter)
         {
             var games = new Repository().Games;
             return (filter ?? "Все") == "Все" ? games :
                 games.Where(game => game.Category == filter);
         }
 
-        public IEnumerable<CategoryView> GetCategories([Form("filterSelect")] string filter)
+        public IEnumerable<string> GetCategories()
         {
             return new string[] { "Все" }.Concat(new Repository().Games
-                .Select(g => g.Category).Distinct().OrderBy(c => c))
-                .Select(c => new CategoryView
-                {
-                    Name = c,
-                    Selected = (c == (filter ?? "Все"))
-                        ? "selected=\"selected\"" : null
-                });
+                .Select(g => g.Category).Distinct().OrderBy(c => c));
         }
     }
 }
