@@ -6,7 +6,7 @@
     <title></title>
     <%: System.Web.Optimization.Styles.Render("~/bundle/basicCSS", 
         "~/Content/themes/base/jqueryUICSS") %>
-    <%: System.Web.Optimization.Scripts.Render("~/bundle/jqueryui") %>
+    <%: System.Web.Optimization.Scripts.Render("~/bundle/jquery", "~/bundle/jqueryui") %>
     <script>
         $(document).ready(function () {
             $('input[type=submit]').button();

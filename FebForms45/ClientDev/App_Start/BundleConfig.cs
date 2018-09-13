@@ -10,15 +10,27 @@ namespace ClientDev.App_Start
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            Bundle jquery = new ScriptBundle("~/bundle/jquery")
-                .Include("~/Scripts/jquery-{version}.js");
-            Bundle jqueryui = new ScriptBundle("~/bundle/jqueryui")
-                .Include("~/Scripts/jquery-{version}.js", "~/Scripts/jquery-ui-{version}.js");
+            Bundle jquery = new CdnScriptBundle("~/bundle/jquery")
+             .CdnInclude("~/Scripts/jquery-{version}.js",
+                 "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-{version}.min.js");
+
+            Bundle jqueryui = new ScriptBundle("~/bundle/jqueryui");
+            jqueryui.CdnPath =
+                "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js";
+            jqueryui.Include("~/Scripts/jquery-{version}.js", "~/Scripts/jquery-ui-{version}.js");
 
             Bundle basicStyles = new StyleBundle("~/bundle/basicCSS")
-                .Include("~/MainStyles.css", "~/ErrorStyles.css");
-            Bundle jqueryUIStyles = new StyleBundle("~/Content/themes/base/jqueryUICSS")
-                    .IncludeDirectory("~/Content/themes/base", "*.css");
+                    .Include("~/MainStyles.css", "~/ErrorStyles.css");
+
+            Bundle jqueryUIStyles = new StyleBundle("~/Content/themes/base/jqueryUICSS");
+            jqueryUIStyles.CdnPath =
+                "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.min.css";
+            jqueryUIStyles.IncludeDirectory("~/Content/themes/base", "*.css");
+
+
+
+
+            bundles.UseCdn = true;
 
             bundles.Add(jquery);
             bundles.Add(jqueryui);
