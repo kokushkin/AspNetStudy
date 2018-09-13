@@ -34,12 +34,15 @@
             </div>
             <button type="submit">Отправить</button>
         </div>
-        <div class="panel">
-            <div><label>Ваше имя:</label><span id="sname" runat="server"></span></div>
-            <div><label>Ваш возраст:</label><span id="sage" runat="server"></span></div>
-            <div><label>Ваш номер:</label><span id="scell" runat="server"></span></div>
-            <div><label>Ваш индекс:</label><span id="szip" runat="server"></span></div>
-        </div>
+            <asp:Repeater SelectMethod="GetUser" ItemType="ControlState.Models.User" 
+                ViewStateMode="Disabled" runat="server">
+                <ItemTemplate>
+                    <div><label>Ваше имя:</label><span><%# Item.Name %></span></div>
+                    <div><label>Ваш возраст:</label><span><%# Item.Age %></span></div>
+                    <div><label>Ваш номер:</label><span><%# Item.Cell %></span></div>
+                    <div><label>Ваш индекс:</label><span><%# Item.Zip %></span></div>
+                </ItemTemplate>
+            </asp:Repeater>
     </form>
 
 </body>
