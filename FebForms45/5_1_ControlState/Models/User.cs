@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ControlState.Models
 {
-    public class User
+    public class User : IValidatableObject
     {
         [Required(ErrorMessage = "Пожалуйста, введите имя")]
         [StringLength(20, MinimumLength = 3, ErrorMessage = "Имя должно содержать от 3 до 20 символов")]
@@ -21,5 +21,16 @@ namespace ControlState.Models
 
         [CustomValidation(typeof(ControlState.CustomChecks), "CheckZip")]
         public string Zip { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            List<ValidationResult> errors = new List<ValidationResult>();
+            if (Name == "Вася" && Age < 20)
+            {
+                errors.Add(
+                    new ValidationResult("Васям до 20 лет доступ на сайт запрещен!"));
+            }
+            return errors;
+        }
     }
 }

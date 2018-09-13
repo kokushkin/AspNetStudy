@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ControlState.Default" %>
+<%@ Register TagPrefix="CC" Assembly="5_1_ControlState" Namespace="ControlState.Controls" %>
 
 <!DOCTYPE html>
 <html>
@@ -19,18 +20,22 @@
             <div>
                 <label>Имя:</label>
                 <input id="name" runat="server" />
+                <CC:FieldValidator PropertyName="Name" CssClass="error" runat="server" />
             </div>
             <div>
                 <label>Возраст:</label>
                 <input id="age" runat="server" />
+                <CC:FieldValidator PropertyName="Age" CssClass="error" runat="server" />
             </div>
             <div>
                 <label>Номер:</label>
                 <input id="cell" runat="server" />
+                <CC:FieldValidator PropertyName="Cell" CssClass="error" runat="server" />
             </div>
             <div>
                 <label>Индекс:</label>
                 <input id="zip" runat="server" />
+                <CC:FieldValidator PropertyName="Zip" CssClass="error" runat="server" />
             </div>
             <button type="submit">Отправить</button>
         </div>
