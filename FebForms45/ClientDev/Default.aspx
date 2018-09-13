@@ -4,7 +4,8 @@
 <html>
 <head runat="server">
     <title></title>
-    <%: System.Web.Optimization.Styles.Render("~/bundle/basicCSS", "~/bundle/jqueryUICSS") %>
+    <%: System.Web.Optimization.Styles.Render("~/bundle/basicCSS", 
+        "~/Content/themes/base/jqueryUICSS") %>
     <%: System.Web.Optimization.Scripts.Render("~/bundle/jqueryui") %>
     <script>
         $(document).ready(function () {

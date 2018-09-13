@@ -17,7 +17,7 @@ namespace ClientDev.App_Start
 
             Bundle basicStyles = new StyleBundle("~/bundle/basicCSS")
                 .Include("~/MainStyles.css", "~/ErrorStyles.css");
-            Bundle jqueryUIStyles = new StyleBundle("~/bundle/jqueryUICSS")
+            Bundle jqueryUIStyles = new StyleBundle("~/Content/themes/base/jqueryUICSS")
                     .IncludeDirectory("~/Content/themes/base", "*.css");
 
             bundles.Add(jquery);
