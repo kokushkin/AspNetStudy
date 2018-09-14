@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ClientDev.Models;
+using ClientDev.Models.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -7,33 +9,77 @@ using System.Web.Http;
 
 namespace ClientDev
 {
+    public class GameView
+    {
+        public GameView() { }
+
+        public GameView(Game Game)
+        {
+            this.GameId = Game.GameId;
+            this.Name = Game.Name;
+            this.Price = Game.Price;
+            this.Category = Game.Category;
+        }
+
+        public int GameId { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public string Category { get; set; }
+
+        public Game ToGame()
+        {
+            return new Game
+            {
+                GameId = this.GameId,
+                Name = this.Name,
+                Price = this.Price,
+                Category = this.Category
+            };
+        }
+    }
+
     public class GameController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IEnumerable<GameView> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new Repository().Games
+                .Select(g => new GameView(g));
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        public GameView Get(int id)
         {
-            return "value";
+            return new Repository().Games.Where(game => game.GameId == id)
+                .Select(g => new GameView(g)).FirstOrDefault();
         }
 
-        // POST api/<controller>
-        public void Post([FromBody]string value)
+        public void Post([FromBody] GameView value)
         {
+            new Repository().AddGame(value.ToGame());
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody] GameView value)
         {
+            Repository repository = new Repository();
+            Game game = repository.Games
+                .Where(g => g.GameId == id).FirstOrDefault();
+
+            if (game != null)
+            {
+                game.Name = value.Name;
+                game.Price = value.Price;
+                game.Category = value.Category;
+            }
+
+            repository.SaveGame(game);
         }
 
-        // DELETE api/<controller>/5
         public void Delete(int id)
         {
+            Repository repository = new Repository();
+            Game game = repository.Games
+                .Where(g => g.GameId == id).FirstOrDefault();
+            if (game != null)
+                repository.DeleteGame(game);
         }
     }
 }
