@@ -52,6 +52,20 @@ namespace ClientDev
                 .Select(g => new GameView(g)).FirstOrDefault();
         }
 
+        public IEnumerable<GameView> Get([System.Web.ModelBinding.Form] string categoryFilter)
+        {
+            if (categoryFilter == null || categoryFilter == "Все")
+            {
+                return Get();
+            }
+            else
+            {
+                return new Repository().Games
+                    .Where(p => p.Category == categoryFilter)
+                    .Select(p => new GameView(p));
+            }
+        }
+
         public void Post([FromBody] GameView value)
         {
             new Repository().AddGame(value.ToGame());
