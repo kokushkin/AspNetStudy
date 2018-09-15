@@ -10,6 +10,11 @@ namespace ClientDev.App_Start
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
+            Bundle validation = new ScriptBundle("~/bundle/validation")
+     .Include("~/Scripts/jquery-{version}.js",
+         "~/Scripts/jquery.validate.js",
+         "~/Scripts/jquery.validate.unobtrusive.js");
+
             Bundle jquery = new CdnScriptBundle("~/bundle/jquery")
              .CdnInclude("~/Scripts/jquery-{version}.js",
                  "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-{version}.min.js");
