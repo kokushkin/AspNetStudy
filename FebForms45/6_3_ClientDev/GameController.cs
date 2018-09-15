@@ -57,20 +57,31 @@ namespace ClientDev
             new Repository().AddGame(value.ToGame());
         }
 
-        public void Put(int id, [FromBody] GameView value)
+        public HttpResponseMessage Put(int id, [FromBody] GameView value)
         {
-            Repository repository = new Repository();
-            Game game = repository.Games
-                .Where(g => g.GameId == id).FirstOrDefault();
-
-            if (game != null)
+            if (ModelState.IsValid)
             {
-                game.Name = value.Name;
-                game.Price = value.Price;
-                game.Category = value.Category;
+                Repository repository = new Repository();
+                Game game = repository.Games
+                    .Where(p => p.GameId == id).FirstOrDefault();
+                if (game != null)
+                {
+                    game.Name = value.Name;
+                    game.Price = value.Price;
+                    game.Category = value.Category;
+                }
+                repository.SaveGame(game);
+                return Request.CreateResponse(HttpStatusCode.OK);
             }
+            else
+            {
+                List<string> errors = new List<string>();
+                foreach (var state in ModelState)
+                    foreach (var error in state.Value.Errors)
+                        errors.Add(error.ErrorMessage);
 
-            repository.SaveGame(game);
+                return Request.CreateResponse(HttpStatusCode.BadRequest, errors);
+            }
         }
 
         public void Delete(int id)

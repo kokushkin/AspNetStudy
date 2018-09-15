@@ -18,7 +18,7 @@
             target.append(template.html().format(dataObject));
         });
         $(target).find("button").click(function (e) {
-            $("*.errorMsg").remove();
+            $("*.errMsg").remove();
             $("*.error").removeClass("error");
             var index = $(e.target).attr("data-id");
             if ($(e.target).attr("data-action") == "delete") {
