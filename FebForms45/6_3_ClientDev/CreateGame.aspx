@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateGame.aspx.cs" Inherits="ClientDev.CreateGame" %>
+<%@ Register TagPrefix="control" Assembly="ClientDev" Namespace="ClientDev" %>
 
 <!DOCTYPE html>
 <html>
@@ -8,39 +9,32 @@
         th { text-align: left; }
         td[colspan="2"] { text-align: center; padding: 10px 0; }
         .error { color: red; }
+        .input-validation-error { border: medium solid red;}
     </style>
-    <%: System.Web.Optimization.Scripts.Render("~/bundle/jquery") %>
-    <script>
-        $(document).ready(function () {
-            $("input[type='submit']").click(function (e) {
-                var input = $('#Name')[0];
-                if (input.checkValidity() && !input.validity.customError) {
-                    var length = input.value.length;
-                    if (length < 5 || length > 20)
-                        input.setCustomValidity("Имя должно содержать от 5 до 20 символов.");
-                    else
-                        input.setCustomValidity("");
-                }
-            })
-        });
-    </script>
+    <%: System.Web.Optimization.Scripts.Render("~/bundle/validation") %>
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ValidationSummary runat="server" CssClass="error" />
+        <div id="errorSummary" data-valmsg-summary="true" class="error">
+            <ul><li style="display:none"></li></ul>
+            <asp:ValidationSummary runat="server" CssClass="error" />
+        </div>
         <table>
-            <tr>
-                <td>Название:</td>
-                <td><input id="Name" runat="server" required="required" /></td>
-            </tr>
-            <tr>
-                <td>Категория:</td>
-                <td><input id="Category" runat="server" required="required" /></td>
-            </tr>
-            <tr>
-                <td>Цена:</td>
-                <td><input id="Price" runat="server" type="number" min="1" max="10000" required="required" /></td>
-            </tr>
+           <control:ValidationRepeater runat="server" 
+                ItemType="ClientDev.ValidationRepeaterDataItem"
+                ModelType ="ClientDev.Models.Game"
+                Properties="Name, Category, Price" >
+                <PropertyTemplate>
+                    <tr>
+                        <td><%# Item.PropertyName %></td>
+                        <td>
+                            <input id="<%# Item.PropertyName %>"  
+                                name="<%# Item.PropertyName %>"  
+                                <%# Item.ValidationAttributes %> />
+                        </td>
+                    </tr>
+                </PropertyTemplate>
+            </control:ValidationRepeater>
             <tr>
                 <td colspan="2"><input type="submit" value="Добавить игру" runat="server"/></td>
             </tr>

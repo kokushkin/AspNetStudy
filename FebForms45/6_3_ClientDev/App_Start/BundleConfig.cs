@@ -37,6 +37,7 @@ namespace ClientDev.App_Start
 
             bundles.UseCdn = true;
 
+            bundles.Add(validation);
             bundles.Add(jquery);
             bundles.Add(jqueryui);
             bundles.Add(basicStyles);
