@@ -9,6 +9,21 @@
         td[colspan="2"] { text-align: center; padding: 10px 0; }
         .error { color: red; }
     </style>
+    <%: System.Web.Optimization.Scripts.Render("~/bundle/jquery") %>
+    <script>
+        $(document).ready(function () {
+            $("input[type='submit']").click(function (e) {
+                var input = $('#Name')[0];
+                if (input.checkValidity() && !input.validity.customError) {
+                    var length = input.value.length;
+                    if (length < 5 || length > 20)
+                        input.setCustomValidity("Имя должно содержать от 5 до 20 символов.");
+                    else
+                        input.setCustomValidity("");
+                }
+            })
+        });
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -16,15 +31,15 @@
         <table>
             <tr>
                 <td>Название:</td>
-                <td><input id="Name" runat="server" /></td>
+                <td><input id="Name" runat="server" required="required" /></td>
             </tr>
             <tr>
                 <td>Категория:</td>
-                <td><input id="Category" runat="server" /></td>
+                <td><input id="Category" runat="server" required="required" /></td>
             </tr>
             <tr>
                 <td>Цена:</td>
-                <td><input id="Price" runat="server" /></td>
+                <td><input id="Price" runat="server" type="number" min="1" max="10000" required="required" /></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="submit" value="Добавить игру" runat="server"/></td>
