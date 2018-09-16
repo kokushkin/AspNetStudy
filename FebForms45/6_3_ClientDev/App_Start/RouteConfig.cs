@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Routing;
 using System.Web.Http;
+using Microsoft.AspNet.FriendlyUrls;
 
 namespace ClientDev.App_Start
 {
@@ -14,6 +15,8 @@ namespace ClientDev.App_Start
             routes.MapHttpRoute(name: "WebApiRoute",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional });
+
+            routes.EnableFriendlyUrls();
         }
     }
 }
