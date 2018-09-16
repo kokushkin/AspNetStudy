@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Mobile.master.cs" Inherits="ClientDev.Site_Mobile" %>
+
+<!DOCTYPE html>
+<html>
+    <head runat="server">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            div { margin-bottom: 10px; }
+            span.message { font-size: xx-large; font-family: sans-serif;
+                           color: white; background: black; }
+        </style>
+        <%: System.Web.Optimization.Styles.Render("~/bundle/jquerymobileCSS") %>
+        <%: System.Web.Optimization.Scripts.Render("~/bundle/jquerymobile") %>
+    </head>
+    <body>
+        <div data-role="page">
+            <div data-role="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+            </div>
+            <div data-role="footer">
+                Этот текст в компоновке Site.Mobile.master
+            </div>
+        </div>
+    </body>
+</html>

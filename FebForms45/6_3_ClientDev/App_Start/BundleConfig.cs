@@ -10,6 +10,14 @@ namespace ClientDev.App_Start
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
+            Bundle jqmobile = new ScriptBundle("~/bundle/jquerymobile")
+    .Include("~/Scripts/jquery-{version}.js",
+        "~/Scripts/jquery.mobile-{version}.js");
+
+            Bundle jqmobileCSS =
+                new StyleBundle("~/bundle/jquerymobileCSS")
+                    .Include("~/Content/jquery.mobile-{version}.css");
+
             Bundle validation = new ScriptBundle("~/bundle/validation")
      .Include("~/Scripts/jquery-{version}.js",
          "~/Scripts/jquery.validate.js",
@@ -37,6 +45,8 @@ namespace ClientDev.App_Start
 
             bundles.UseCdn = true;
 
+            bundles.Add(jqmobile);
+            bundles.Add(jqmobileCSS);
             bundles.Add(validation);
             bundles.Add(jquery);
             bundles.Add(jqueryui);
