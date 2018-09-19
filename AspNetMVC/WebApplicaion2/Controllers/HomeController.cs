@@ -11,7 +11,7 @@ namespace WebApplicaion2.Controllers
         public ActionResult Index()
         {
             int firstVal = 10;
-            int secondVal = 0;
+            int secondVal = 2;
             int result = firstVal / secondVal;
 
             //ViewBag.Message = "Отладка приложения ASP.NET MVC!";
