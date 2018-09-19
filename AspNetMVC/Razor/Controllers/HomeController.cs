@@ -27,5 +27,27 @@ namespace Razor.Controllers
         {
             return View(myProduct);
         }
+
+        public ActionResult DemoExpression()
+        {
+
+            ViewBag.ProductCount = 1;
+            ViewBag.ExpressShip = true;
+            ViewBag.ApplyDiscount = false;
+            ViewBag.Supplier = null;
+
+            return View(myProduct);
+        }
+
+        public ActionResult DemoArray()
+        {
+            Product[] array = {
+                new Product {Name = "Каяк", Price = 275M},
+                new Product {Name = "Спасательный жилет", Price = 48.95M},
+                new Product {Name = "Футбольной мяч", Price = 19.50M},
+                new Product {Name = "Угловой флажок", Price = 34.95M}
+            };
+            return View(array);
+        }
     }
 }
