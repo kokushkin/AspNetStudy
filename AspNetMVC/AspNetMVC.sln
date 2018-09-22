@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2_3_EssentialTools", "Essen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EssentialTools.Tests", "EssentialTools.Tests\EssentialTools.Tests.csproj", "{AFE3B587-64A2-4ECF-9FCB-FF81AFBEAA03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_1_UrlsAndRoutes", "UrlsAndRoutes\3_1_UrlsAndRoutes.csproj", "{B00365AE-2036-4BF3-A420-78C0ED4E98B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlsAndRoutes.Tests", "UrlsAndRoutes.Tests\UrlsAndRoutes.Tests.csproj", "{3E523981-987B-46B7-9ED1-2CE04DFA2E8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{AFE3B587-64A2-4ECF-9FCB-FF81AFBEAA03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFE3B587-64A2-4ECF-9FCB-FF81AFBEAA03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFE3B587-64A2-4ECF-9FCB-FF81AFBEAA03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B00365AE-2036-4BF3-A420-78C0ED4E98B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B00365AE-2036-4BF3-A420-78C0ED4E98B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B00365AE-2036-4BF3-A420-78C0ED4E98B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B00365AE-2036-4BF3-A420-78C0ED4E98B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E523981-987B-46B7-9ED1-2CE04DFA2E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E523981-987B-46B7-9ED1-2CE04DFA2E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E523981-987B-46B7-9ED1-2CE04DFA2E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E523981-987B-46B7-9ED1-2CE04DFA2E8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
