@@ -21,50 +21,18 @@ namespace UrlsAndRoutes
             //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             //);
 
-            //routes.MapRoute(
-            //    name: "MyRoute",
-            //    url: "{controller}/{action}/{id}/{*catchcall}",
-            //    defaults: new
-            //    {
-            //        controller = "Home",
-            //        action = "Index",
-            //        id = UrlParameter.Optional
-            //    }
-            //);
+            routes.MapMvcAttributeRoutes();
 
             routes.MapRoute(
-                name: "GoogleChromeRoute",
-                url: "{*catchcall}",
-                defaults: new
-                {
-                    controller = "Home",
-                    action = "Index"
-                },
-                constraints: new
-                {
-                    custom = new UserAgentConstraint("Chrome")
-                },
-                namespaces: new[] { "UrlsAndRoutes.AdditionalControllers" });
-
-            routes.MapRoute(
-                name: "MyRoute",
-                url: "{controller}/{action}/{id}/{*catchcall}",
+                name: "Default",
+                url: "{controller}/{action}/{id}",
                 defaults: new
                 {
                     controller = "Home",
                     action = "Index",
                     id = UrlParameter.Optional
                 },
-                namespaces: new[] { "UrlsAndRoutes.Controllers" },
-                constraints: new
-                {
-                    controller = "^H.*",
-                    action = "^Index$|^CustomVariable$",
-                    httpMethod = new HttpMethodConstraint("GET", "POST"),
-                    id = new CompoundRouteConstraint(new IRouteConstraint[] {
-                        new AlphaRouteConstraint(),
-                        new MinLengthRouteConstraint(6)})
-                });
+                namespaces: new[] { "UrlsAndRoutes.Controllers" });
         }
     }
 }
