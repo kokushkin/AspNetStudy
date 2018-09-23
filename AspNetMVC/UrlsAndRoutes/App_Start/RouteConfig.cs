@@ -19,7 +19,19 @@ namespace UrlsAndRoutes
             //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             //);
 
-            routes.MapRoute("MyRoute", "{controller}/{action}");
+            routes.MapRoute("ShopSchema2", "Shop/OldMethod",
+                defaults: new { action = "Index", controller = "Home" });
+
+            routes.MapRoute("ShopSchema", "Shop/{action}",
+                defaults: new { action = "Index", controller = "Home" });
+
+            routes.MapRoute(null, "X{controller}/{action}");
+
+            routes.MapRoute(null, "Public/{controller}/{action}",
+                defaults: new { action = "Index", controller = "Home" });
+
+            routes.MapRoute("MyRoute", "{controller}/{action}",
+                defaults: new { action = "Index", controller = "Home" });
         }
     }
 }

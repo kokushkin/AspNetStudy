@@ -96,16 +96,11 @@ namespace UrlsAndRoutes.Tests
         [TestMethod]
         public void TestIncomingRoutes()
         {
-            // Проверить URL который мы надеемся получить
-            TestRouteMatch("~/Admin/Index", "Admin", "Index");
-
-            // Проверить значения, получаемые из сегментов
-            TestRouteMatch("~/One/Two", "One", "Two");
-
-            // Удостовериться, что слишком много или слишком мало сегментов
-            // не приводят к совпадению
-            TestRouteFail("~/Admin/Index/ThirdSegment");
-            TestRouteFail("~/Admin");
+            TestRouteMatch("~/", "Home", "Index");
+            TestRouteMatch("~/Home", "Home", "Index");
+            TestRouteMatch("~/Home/Index", "Home", "Index");
+            TestRouteFail("~/Home/Index/All");
+            TestRouteMatch("~/Shop/OldMethod", "Home", "Index");
         }
     }
 }
