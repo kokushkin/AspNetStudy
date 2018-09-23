@@ -105,11 +105,15 @@ namespace UrlsAndRoutes.Tests
             TestRouteMatch("~/", "Home", "Index");
             TestRouteMatch("~/Home", "Home", "Index");
             TestRouteMatch("~/Home/Index", "Home", "Index");
+            TestRouteMatch("~/Home/CustomVariable", "Home", "CustomVariable");
             TestRouteMatch("~/Home/Index/All", "Home", "Index");
             TestRouteMatch("~/Home/Index/All/Delete", "Home", "Index",
                 new { id = "All", catchcall = "Delete" });
             TestRouteMatch("~/Home/Index/All/Delete/Insert", "Home", "Index",
                 new { id = "All", catchcall = "Delete/Insert" });
+
+            TestRouteFail("~/Home/About");
+            TestRouteFail("~/Admin/Index");
         }
     }
 }

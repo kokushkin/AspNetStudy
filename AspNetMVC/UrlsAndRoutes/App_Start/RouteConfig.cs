@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Mvc.Routing.Constraints;
 using System.Web.Routing;
+using UrlsAndRoutes.Infrastructure;
 
 namespace UrlsAndRoutes
 {
@@ -30,18 +32,39 @@ namespace UrlsAndRoutes
             //    }
             //);
 
-            Route myRoute = routes.MapRoute(
-            name: "NewRoute",
-            url: "Home/{action}/{id}/{*catchcall}",
-            defaults: new
-            {
-                controller = "Home",
-                action = "Index",
-                id = UrlParameter.Optional
-            },
-            namespaces: new[] { "UrlsAndRoutes.AdditionalControllers" });
+            routes.MapRoute(
+                name: "GoogleChromeRoute",
+                url: "{*catchcall}",
+                defaults: new
+                {
+                    controller = "Home",
+                    action = "Index"
+                },
+                constraints: new
+                {
+                    custom = new UserAgentConstraint("Chrome")
+                },
+                namespaces: new[] { "UrlsAndRoutes.AdditionalControllers" });
 
-            myRoute.DataTokens["UseNamespaceFallback"] = false;
+            routes.MapRoute(
+                name: "MyRoute",
+                url: "{controller}/{action}/{id}/{*catchcall}",
+                defaults: new
+                {
+                    controller = "Home",
+                    action = "Index",
+                    id = UrlParameter.Optional
+                },
+                namespaces: new[] { "UrlsAndRoutes.Controllers" },
+                constraints: new
+                {
+                    controller = "^H.*",
+                    action = "^Index$|^CustomVariable$",
+                    httpMethod = new HttpMethodConstraint("GET", "POST"),
+                    id = new CompoundRouteConstraint(new IRouteConstraint[] {
+                        new AlphaRouteConstraint(),
+                        new MinLengthRouteConstraint(6)})
+                });
         }
     }
 }
