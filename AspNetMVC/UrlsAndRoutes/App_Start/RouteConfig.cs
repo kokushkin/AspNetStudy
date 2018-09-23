@@ -19,19 +19,29 @@ namespace UrlsAndRoutes
             //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             //);
 
-            routes.MapRoute("ShopSchema2", "Shop/OldMethod",
-                defaults: new { action = "Index", controller = "Home" });
+            //routes.MapRoute(
+            //    name: "MyRoute",
+            //    url: "{controller}/{action}/{id}/{*catchcall}",
+            //    defaults: new
+            //    {
+            //        controller = "Home",
+            //        action = "Index",
+            //        id = UrlParameter.Optional
+            //    }
+            //);
 
-            routes.MapRoute("ShopSchema", "Shop/{action}",
-                defaults: new { action = "Index", controller = "Home" });
+            Route myRoute = routes.MapRoute(
+            name: "NewRoute",
+            url: "Home/{action}/{id}/{*catchcall}",
+            defaults: new
+            {
+                controller = "Home",
+                action = "Index",
+                id = UrlParameter.Optional
+            },
+            namespaces: new[] { "UrlsAndRoutes.AdditionalControllers" });
 
-            routes.MapRoute(null, "X{controller}/{action}");
-
-            routes.MapRoute(null, "Public/{controller}/{action}",
-                defaults: new { action = "Index", controller = "Home" });
-
-            routes.MapRoute("MyRoute", "{controller}/{action}",
-                defaults: new { action = "Index", controller = "Home" });
+            myRoute.DataTokens["UseNamespaceFallback"] = false;
         }
     }
 }
