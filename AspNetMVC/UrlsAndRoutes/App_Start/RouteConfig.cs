@@ -21,18 +21,24 @@ namespace UrlsAndRoutes
             //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             //);
 
-            routes.MapMvcAttributeRoutes();
+            //routes.MapMvcAttributeRoutes();
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new
-                {
-                    controller = "Home",
-                    action = "Index",
-                    id = UrlParameter.Optional
-                },
-                namespaces: new[] { "UrlsAndRoutes.Controllers" });
+            ////routes.MapRoute("NewRoute", "App/Do{action}",
+            ////    new { controller = "Home" });
+
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new
+            //    {
+            //        controller = "Home",
+            //        action = "Index",
+            //        id = UrlParameter.Optional
+            //    });
+
+
+            routes.MapRoute("MyRoute", "{controller}/{action}");
+            routes.MapRoute("MyOtherRoute", "App/{action}", new { controller = "Home" });
         }
     }
 }

@@ -22,5 +22,10 @@ namespace UrlsAndRoutes.Controllers
             ViewBag.CustomVariable = id;
             return View();
         }
+
+        public RedirectToRouteResult MyActionMethod()
+        {
+            return RedirectToRoute(new { controller = "Home", action = "Index", id = "MyID" });
+        }
     }
 }

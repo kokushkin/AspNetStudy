@@ -93,27 +93,5 @@ namespace UrlsAndRoutes.Tests
             Assert.IsTrue(result == null || result.Route == null);
         }
 
-        [TestMethod]
-        public void TestIncomingRoutes()
-        {
-            //TestRouteMatch("~/", "Home", "Index", new { id = "DefaultId" });
-            //TestRouteMatch("~/Home", "Home", "Index", new { id = "DefaultId" });
-            //TestRouteMatch("~/Home/Index", "Home", "Index", new { id = "DefaultId" });
-            //TestRouteFail("~/Home/Index/All/Delete");
-            //TestRouteMatch("~/Home/Index/All", "Home", "Index", new { id = "All" });
-
-            TestRouteMatch("~/", "Home", "Index");
-            TestRouteMatch("~/Home", "Home", "Index");
-            TestRouteMatch("~/Home/Index", "Home", "Index");
-            TestRouteMatch("~/Home/CustomVariable", "Home", "CustomVariable");
-            TestRouteMatch("~/Home/Index/All", "Home", "Index");
-            TestRouteMatch("~/Home/Index/All/Delete", "Home", "Index",
-                new { id = "All", catchcall = "Delete" });
-            TestRouteMatch("~/Home/Index/All/Delete/Insert", "Home", "Index",
-                new { id = "All", catchcall = "Delete/Insert" });
-
-            TestRouteFail("~/Home/About");
-            TestRouteFail("~/Admin/Index");
-        }
     }
 }
