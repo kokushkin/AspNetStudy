@@ -36,8 +36,18 @@ namespace UrlsAndRoutes
             //        id = UrlParameter.Optional
             //    });
 
+            routes.RouteExistingFiles = true;
 
             routes.MapMvcAttributeRoutes();
+
+            routes.IgnoreRoute("Content/{filename}.html");
+
+            routes.MapRoute("DiskFileRoute", "Content/StaticContent.html",
+                 new
+                 {
+                     controller = "Customer",
+                     action = "List"
+                 });
 
             routes.Add(new Route("SayHello", new CustomRouteHandler()));
 
