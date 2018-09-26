@@ -46,8 +46,10 @@ namespace UrlsAndRoutes
                 "~/old/NET_Framework_4"
                 ));
 
-            routes.MapRoute("MyRoute", "{controller}/{action}");
-            routes.MapRoute("MyOtherRoute", "App/{action}", new { controller = "Home" });
+            routes.MapRoute("MyRoute", "{controller}/{action}",
+                namespaces: new[] { "UrlsAndRoutes.Controllers" });
+            routes.MapRoute("MyOtherRoute", "App/{action}", new { controller = "Home" },
+                namespaces: new[] { "UrlsAndRoutes.Controllers" });
         }
     }
 }
