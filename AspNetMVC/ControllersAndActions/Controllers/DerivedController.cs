@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControllersAndActions.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -37,6 +38,19 @@ namespace ControllersAndActions.Controllers
         {
             // реализовать прогноз погоды
             return View();
+        }
+
+        public ActionResult ProduceOutput()
+        {
+            //if (Server.MachineName == "ProfessorWeb")
+            //    return new CustomRedirectResult { Url = "/Basic/Index" };
+            //else
+            //{
+            //    Response.Write("Контроллер: Derived, Метод действия: ProduceOutput");
+            //    return null;
+            //}
+
+            return Redirect("/Basic/Index");
         }
 
     }
