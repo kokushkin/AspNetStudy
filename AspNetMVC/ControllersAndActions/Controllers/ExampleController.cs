@@ -15,5 +15,15 @@ namespace ControllersAndActions.Controllers
             ViewBag.Date = DateTime.Now;
             return View();
         }
+
+        public RedirectResult Redirect()
+        {
+            return RedirectPermanent("/Basic/Index");
+        }
+
+        public RedirectToRouteResult RedirectRoute()
+        {
+            return RedirectToAction("Index", "Basic");
+        }
     }
 }

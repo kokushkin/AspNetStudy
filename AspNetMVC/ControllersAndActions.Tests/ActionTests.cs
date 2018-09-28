@@ -15,11 +15,13 @@ namespace ControllersAndActions.Tests
             ExampleController controller = new ExampleController();
 
             // Действие - вызов метода действия
-            ViewResult result = controller.Index();
+            RedirectToRouteResult result = controller.RedirectRoute();
 
             // Утверждение - проверка результата
-            Assert.AreEqual("", result.ViewName);
-            Assert.AreEqual("Привет", result.ViewBag.Message);
+            Assert.IsFalse(result.Permanent);
+            Assert.AreEqual("Basic", result.RouteValues["controller"]);
+            Assert.AreEqual("Index", result.RouteValues["action"]);
+            Assert.AreEqual("MyId", result.RouteValues["id"]);
         }
 
         [TestMethod]
@@ -35,5 +37,7 @@ namespace ControllersAndActions.Tests
             Assert.AreEqual("", result.ViewName);
             Assert.IsInstanceOfType(result.ViewData.Model, typeof(System.DateTime));
         }
+
+
     }
 }
