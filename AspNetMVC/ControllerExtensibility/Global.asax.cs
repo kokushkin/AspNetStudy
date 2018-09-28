@@ -12,11 +12,14 @@ namespace ControllerExtensibility
     {
         protected void Application_Start()
         {
+            ControllerBuilder.Current.DefaultNamespaces.Add("MyNamespaceController");
+            ControllerBuilder.Current.DefaultNamespaces.Add("MyProject.*");
+
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             ControllerBuilder.Current.SetControllerFactory(
-                new CustomControllerFactory());
+                new DefaultControllerFactory(new CustomControllerActivator()));
         }
     }
 }
