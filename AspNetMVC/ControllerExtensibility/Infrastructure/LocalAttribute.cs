@@ -12,7 +12,7 @@ namespace ControllerExtensibility.Infrastructure
         public override bool IsValidForRequest(ControllerContext controllerContext,
                 MethodInfo methodInfo)
         {
-            return controllerContext.HttpContext.Request.IsLocal;
+           return controllerContext.HttpContext.Request.IsLocal;
         }
     }
 }
