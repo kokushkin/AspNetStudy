@@ -15,13 +15,10 @@ namespace ControllersAndActions.Tests
             ExampleController controller = new ExampleController();
 
             // Действие - вызов метода действия
-            RedirectToRouteResult result = controller.RedirectRoute();
+            HttpStatusCodeResult result = controller.StatusCode();
 
             // Утверждение - проверка результата
-            Assert.IsFalse(result.Permanent);
-            Assert.AreEqual("Basic", result.RouteValues["controller"]);
-            Assert.AreEqual("Index", result.RouteValues["action"]);
-            Assert.AreEqual("MyId", result.RouteValues["id"]);
+            Assert.AreEqual(401, result.StatusCode);
         }
 
         [TestMethod]

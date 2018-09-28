@@ -27,5 +27,13 @@ namespace ControllersAndActions.Controllers
             TempData["Date"] = DateTime.Now;
             return RedirectToAction("Index");
         }
+
+        public HttpStatusCodeResult StatusCode()
+        {
+            // Ошибка 404 - URL не может быть обслужен
+            //return new HttpStatusCodeResult(404, "Страница не найдена");
+
+            return new HttpUnauthorizedResult();
+        }
     }
 }
