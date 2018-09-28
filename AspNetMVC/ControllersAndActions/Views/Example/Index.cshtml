@@ -4,5 +4,5 @@
 
 <h2>Index</h2>
 
-День недели: @(ViewBag.Date.DayOfWeek)<br />
-Сообщение из контроллера: @ViewBag.Message
+День недели: @(((DateTime)TempData["Date"]).DayOfWeek)<br />
+Сообщение из контроллера: @TempData["Message"]

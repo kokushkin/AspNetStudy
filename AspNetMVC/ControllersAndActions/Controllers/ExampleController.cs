@@ -11,8 +11,8 @@ namespace ControllersAndActions.Controllers
         // GET: Example
         public ViewResult Index()
         {
-            ViewBag.Message = "Привет";
-            ViewBag.Date = DateTime.Now;
+            //ViewBag.Message = TempData["Message"];
+            //ViewBag.Date = TempData["Date"];
             return View();
         }
 
@@ -23,7 +23,9 @@ namespace ControllersAndActions.Controllers
 
         public RedirectToRouteResult RedirectRoute()
         {
-            return RedirectToAction("Index", "Basic"); 
+            TempData["Message"] = "Привет";
+            TempData["Date"] = DateTime.Now;
+            return RedirectToAction("Index");
         }
     }
 }
