@@ -23,7 +23,7 @@ namespace ControllersAndActions.Controllers
 
         public RedirectToRouteResult RedirectRoute()
         {
-            return RedirectToAction("Index", "Basic");
+            return RedirectToAction("Index", "Basic"); 
         }
     }
 }
