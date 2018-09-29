@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_7_ControllerExtensibility
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_10_Views", "Views\4_10_Views.csproj", "{27237308-3CBA-443C-A98B-637AB9E678B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_11_WorkingWithRazor", "WorkingWithRazor\4_11_WorkingWithRazor.csproj", "{0A8AC5D8-2E3C-4570-B120-25BADE73B455}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{27237308-3CBA-443C-A98B-637AB9E678B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27237308-3CBA-443C-A98B-637AB9E678B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27237308-3CBA-443C-A98B-637AB9E678B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A8AC5D8-2E3C-4570-B120-25BADE73B455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A8AC5D8-2E3C-4570-B120-25BADE73B455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A8AC5D8-2E3C-4570-B120-25BADE73B455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A8AC5D8-2E3C-4570-B120-25BADE73B455}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
