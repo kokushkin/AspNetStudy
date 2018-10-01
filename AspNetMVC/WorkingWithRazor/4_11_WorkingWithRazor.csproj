@@ -108,6 +108,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\MyPartial.cshtml" />
     <Content Include="Views\Shared\MyStronglyTypedPartial.cshtml" />
+    <Content Include="Views\Home\Time.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
