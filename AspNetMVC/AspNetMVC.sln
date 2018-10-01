@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_10_Views", "Views\4_10_Vi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_11_WorkingWithRazor", "WorkingWithRazor\4_11_WorkingWithRazor.csproj", "{0A8AC5D8-2E3C-4570-B120-25BADE73B455}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5_1_Filter", "Filter\5_1_Filter.csproj", "{649A6B60-0150-4C14-BB98-0E61FE938482}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{0A8AC5D8-2E3C-4570-B120-25BADE73B455}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A8AC5D8-2E3C-4570-B120-25BADE73B455}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A8AC5D8-2E3C-4570-B120-25BADE73B455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{649A6B60-0150-4C14-BB98-0E61FE938482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{649A6B60-0150-4C14-BB98-0E61FE938482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{649A6B60-0150-4C14-BB98-0E61FE938482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{649A6B60-0150-4C14-BB98-0E61FE938482}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
