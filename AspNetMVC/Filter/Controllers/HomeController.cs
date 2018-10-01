@@ -15,5 +15,12 @@ namespace Filter.Controllers
         {
             return "Это метод действия Index в контроллере Home";
         }
+
+        [GoogleAuth]
+        [Authorize(Users = "alex@google.com")]
+        public string List()
+        {
+            return "Это метод действия List в контроллере Home";
+        }
     }
 }
