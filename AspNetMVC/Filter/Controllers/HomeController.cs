@@ -22,5 +22,19 @@ namespace Filter.Controllers
         {
             return "Это метод действия List в контроллере Home";
         }
+
+        [HandleError(ExceptionType = typeof(ArgumentOutOfRangeException),
+            View = "RangeError")]
+        public string RangeTest(int id)
+        {
+            if (id > 100)
+            {
+                return String.Format("Значение ID: {0}", id);
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("id", id, "");
+            }
+        }
     }
 }
