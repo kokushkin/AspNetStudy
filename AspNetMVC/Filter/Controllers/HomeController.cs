@@ -1,6 +1,7 @@
 ﻿using Filter.Infrastructure;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -38,12 +39,26 @@ namespace Filter.Controllers
         }
 
         //[CustomAction]
-        [ProfileAction]
-        [ProfileResult]
-        [ProfileAll]
+        //[ProfileAction]
+        //[ProfileResult]
+        //[ProfileAll]
+        private Stopwatch timer;
         public string FilterTest()
         {
             return "Это метод действия FilterTest в контроллере Home";
+        }
+
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            timer = Stopwatch.StartNew();
+        }
+
+        protected override void OnResultExecuted(ResultExecutedContext filterContext)
+        {
+            timer.Stop();
+            filterContext.HttpContext.Response.Write(
+                    string.Format("<div>Общее время: {0}</div>",
+                        timer.Elapsed.TotalSeconds));
         }
     }
 }
