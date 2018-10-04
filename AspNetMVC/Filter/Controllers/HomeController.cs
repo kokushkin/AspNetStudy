@@ -39,6 +39,8 @@ namespace Filter.Controllers
 
         //[CustomAction]
         [ProfileAction]
+        [ProfileResult]
+        [ProfileAll]
         public string FilterTest()
         {
             return "Это метод действия FilterTest в контроллере Home";
