@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_11_WorkingWithRazor", "Wo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5_1_Filter", "Filter\5_1_Filter.csproj", "{649A6B60-0150-4C14-BB98-0E61FE938482}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6_1_HelperMethods", "HelperMethods\6_1_HelperMethods.csproj", "{EBEE8254-5740-422A-81BF-A155669F2321}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{649A6B60-0150-4C14-BB98-0E61FE938482}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{649A6B60-0150-4C14-BB98-0E61FE938482}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{649A6B60-0150-4C14-BB98-0E61FE938482}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBEE8254-5740-422A-81BF-A155669F2321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBEE8254-5740-422A-81BF-A155669F2321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBEE8254-5740-422A-81BF-A155669F2321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBEE8254-5740-422A-81BF-A155669F2321}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
