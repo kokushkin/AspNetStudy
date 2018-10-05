@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelperMethods.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,17 @@ namespace HelperMethods.Controllers
             string message = "Это HTML-элемент: <input>";
 
             return View((object)message);
+        }
+
+        public ActionResult CreateUser()
+        {
+            return View(new User());
+        }
+
+        [HttpPost]
+        public ActionResult CreateUser(User User)
+        {
+            return View(User);
         }
     }
 }

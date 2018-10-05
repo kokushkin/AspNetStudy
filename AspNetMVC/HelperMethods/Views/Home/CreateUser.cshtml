@@ -1,0 +1,25 @@
+﻿@model HelperMethods.Models.User
+
+@{
+    ViewBag.Title = "CreateUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Создать пользователя</h2>
+@using (Html.BeginRouteForm("FormRoute", null, FormMethod.Post,
+    new { @class = "userCssClass", data_formType = "user" }))
+{
+    <div class="item">
+        <label>UserId</label>
+        <input name="userId" value="@Model.UserId" />
+    </div>
+    <div class="item">
+        <label>Имя</label>
+        <input name="FirstName" value="@Model.FirstName" />
+    </div>
+    <div class="item">
+        <label>Фамилия</label>
+        <input name="LastName" value="@Model.LastName" />
+    </div>
+    <input type="submit" value="Отправить" />
+}
