@@ -11,15 +11,20 @@
 {
     <div class="item">
         <label>UserId</label>
-        <input name="userId" value="@Model.UserId" />
+        @Html.TextBoxFor(user => user.UserId)
     </div>
     <div class="item">
         <label>Имя</label>
-        <input name="FirstName" value="@Model.FirstName" />
+        @Html.TextBoxFor(user => user.FirstName)
     </div>
     <div class="item">
         <label>Фамилия</label>
-        <input name="LastName" value="@Model.LastName" />
+        @Html.TextBoxFor(user => user.LastName)
+    </div>
+    <div class="item">
+        <label>Роль</label>
+        @Html.DropDownListFor(user => user.Role,
+            new SelectList(Enum.GetNames(typeof(HelperMethods.Models.Role))))
     </div>
     <input type="submit" value="Отправить" />
 }
