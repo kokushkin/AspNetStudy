@@ -8,10 +8,15 @@
     Html.EnableClientValidation(false);
 }
 
-<h2>Создать пользователя</h2>
+<h2>Создать пользователя: @Html.LabelForModel() </h2>
 @using (Html.BeginRouteForm("FormRoute", null, FormMethod.Post,
     new { @class = "userCssClass", data_formType = "user" }))
 {
-    @Html.EditorForModel();
+    <div class="column">
+        @Html.EditorForModel();
+    </div>
+    <div class="column">
+        @Html.EditorFor(user => user.HomeAddress)
+    </div>
     <input type="submit" value="Отправить" />
 }

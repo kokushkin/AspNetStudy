@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace HelperMethods.Models
 {
-    public class User
+
+    [MetadataType(typeof(UserMetaData))]
+    public partial class User
     {
         public int UserId { get; set; }
         public string FirstName { get; set; }
@@ -16,12 +21,22 @@ namespace HelperMethods.Models
         public Role Role { get; set; }
     }
 
+
     public class Address
     {
+        [DisplayName("Адрес 1")]
         public string Line1 { get; set; }
+
+        [DisplayName("Адрес 2")]
         public string Line2 { get; set; }
+
+        [DisplayName("Город")]
         public string City { get; set; }
+
+        [DisplayName("Почтовый индекс")]
         public string PostalCode { get; set; }
+
+        [DisplayName("Страна")]
         public string Country { get; set; }
     }
 
