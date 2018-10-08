@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5_1_Filter", "Filter\5_1_Fi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6_1_HelperMethods", "HelperMethods\6_1_HelperMethods.csproj", "{EBEE8254-5740-422A-81BF-A155669F2321}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7_1_MvcModels", "MvcModels\7_1_MvcModels.csproj", "{E9C00FFA-3CC3-48E8-BFEE-2BC7315B57E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{EBEE8254-5740-422A-81BF-A155669F2321}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBEE8254-5740-422A-81BF-A155669F2321}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBEE8254-5740-422A-81BF-A155669F2321}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9C00FFA-3CC3-48E8-BFEE-2BC7315B57E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9C00FFA-3CC3-48E8-BFEE-2BC7315B57E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9C00FFA-3CC3-48E8-BFEE-2BC7315B57E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9C00FFA-3CC3-48E8-BFEE-2BC7315B57E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
