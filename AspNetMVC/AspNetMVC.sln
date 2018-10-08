@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6_1_HelperMethods", "Helper
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7_1_MvcModels", "MvcModels\7_1_MvcModels.csproj", "{E9C00FFA-3CC3-48E8-BFEE-2BC7315B57E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7_4_ModelValidation", "ModelValidation\7_4_ModelValidation.csproj", "{091DDFCA-27A6-4835-B8A1-569D5B2AA04D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{E9C00FFA-3CC3-48E8-BFEE-2BC7315B57E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9C00FFA-3CC3-48E8-BFEE-2BC7315B57E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9C00FFA-3CC3-48E8-BFEE-2BC7315B57E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{091DDFCA-27A6-4835-B8A1-569D5B2AA04D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{091DDFCA-27A6-4835-B8A1-569D5B2AA04D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{091DDFCA-27A6-4835-B8A1-569D5B2AA04D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{091DDFCA-27A6-4835-B8A1-569D5B2AA04D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
