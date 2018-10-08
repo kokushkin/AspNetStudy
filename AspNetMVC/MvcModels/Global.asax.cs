@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcModels.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,9 @@ namespace MvcModels
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            ValueProviderFactories.Factories.Insert(
+    index: 0,
+    item: new CustomValueProviderFactory());
         }
     }
 }

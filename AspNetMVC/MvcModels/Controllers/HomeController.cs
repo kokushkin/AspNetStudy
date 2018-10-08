@@ -48,17 +48,10 @@ namespace MvcModels.Controllers
             return View(names);
         }
 
-        public ActionResult Address(FormCollection formData)
+        public ActionResult Address()
         {
             List<AdressSummary> addresses = new List<AdressSummary>();
-            if (TryUpdateModel(addresses, formData))
-            {
-                // Продолжить обработку обычным образом
-            }
-            else
-            {
-                // Отобразить ошибку пользователю
-            }
+            UpdateModel(addresses);
             return View(addresses);
         }
     }
