@@ -9,22 +9,20 @@
         Url = Url.Action("GetPeopleData"),
         LoadingElementDuration = 1000,
         LoadingElementId = "loading",
-        Confirm = "Вы действительно хотите получить новые данные?"
+        OnSuccess = "processData"
     };
 }
 
 <script type="text/javascript">
-    function OnBegin() {
-        console.log('Это сообщение получено из обработчика onBegin')
-    }
-    function OnSuccess(data) {
-        console.log('Это сообщение получено из обработчика onSuccess: ' + data)
-    }
-    function OnFailure(request, error) {
-        console.log('Это сообщение получено из обработчика onFailure: ' + error)
-    }
-    function OnComplete(request, status) {
-        console.log('Это сообщение получено из обработчика onComplete: ' + status)
+    function processData(data) {
+        var target = $("#tableBody");
+        target.empty();
+        for (var i = 0; i < data.length; i++) {
+            var user = data[i];
+            target.append("<tr><td>" + user.FirstName + "</td><td>"
+                + user.LastName + "</td><td>" + user.Role
+                + "</td></tr>");
+        }
     }
 </script>
 
@@ -61,12 +59,8 @@
                 new { selectedRole = role },
                 new AjaxOptions
                 {
-                    UpdateTargetId = "tableBody",
                     Url = Url.Action("GetPeopleData", new { selectedRole = role }),
-                    OnBegin = "OnBegin",
-                    OnSuccess = "OnSuccess",
-                    OnComplete = "OnComplete",
-                    OnFailure = "OnFailure"
+                    OnSuccess = "processData"
                 })
         </div>
     }
