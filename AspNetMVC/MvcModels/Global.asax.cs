@@ -14,9 +14,13 @@ namespace MvcModels
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            ValueProviderFactories.Factories.Insert(
-    index: 0,
-    item: new CustomValueProviderFactory());
+
+            //ValueProviderFactories.Factories.Insert(
+            //    index: 0,
+            //    item: new CustomValueProviderFactory());
+
+            //ModelBinders.Binders.Add(typeof(MvcModels.Models.AdressSummary),
+            //    new AddressSummaryBinder());
         }
     }
 }
