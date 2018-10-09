@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace ModelValidation.Models
 {
@@ -16,6 +17,7 @@ namespace ModelValidation.Models
 
         [DataType(DataType.Date)]
         //[FutureDate(ErrorMessage = "Введите дату относящуюся к будущему")]
+        [Remote("ValidateDate", "Home")]
         public DateTime Date { get; set; }
 
         //[MustBeTrue(ErrorMessage = "Вы должны принять условия")]

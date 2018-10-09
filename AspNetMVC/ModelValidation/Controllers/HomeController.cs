@@ -41,5 +41,25 @@ namespace ModelValidation.Controllers
             else
                 return View();
         }
+
+        public JsonResult ValidateDate(string Date)
+        {
+            DateTime parsedDate;
+
+            if (!DateTime.TryParse(Date, out parsedDate))
+            {
+                return Json("Пожалуйста, введите дату в формате (мм.дд.гггг)",
+                    JsonRequestBehavior.AllowGet);
+            }
+            else if (DateTime.Now > parsedDate)
+            {
+                return Json("Введите дату относящуюся к будущему",
+                    JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+        }
     }
 }
