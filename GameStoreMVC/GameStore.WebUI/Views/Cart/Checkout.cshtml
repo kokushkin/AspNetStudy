@@ -10,6 +10,7 @@
 
 @using (Html.BeginForm())
 {
+    @Html.ValidationSummary();
     <h3>Данные</h3>
     <div class="form-group">
         <label>Ваше имя:</label>
@@ -17,8 +18,10 @@
     </div>
 
     <h3>Адрес доставки</h3>
-    foreach (var property in ViewData.ModelMetadata.Properties) {
-        if (property.PropertyName != "Name" && property.PropertyName != "GiftWrap") {
+    foreach (var property in ViewData.ModelMetadata.Properties)
+    {
+        if (property.PropertyName != "Name" && property.PropertyName != "GiftWrap")
+        {
             <div class="form-group">
                 <label>@(property.DisplayName ?? property.PropertyName)</label>
                 @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
