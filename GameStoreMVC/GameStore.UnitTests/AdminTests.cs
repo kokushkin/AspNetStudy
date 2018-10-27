@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Mvc;
 using GameStore.Domain.Abstract;
 using GameStore.Domain.Entities;
 using GameStore.WebUI.Controllers;
@@ -90,6 +91,54 @@ namespace GameStore.UnitTests
 
             // Assert
             Assert.IsNull(result);
+        }
+
+
+        [TestMethod]
+        public void Can_Save_Valid_Changes()
+        {
+            // Организация - создание имитированного хранилища данных
+            Mock<IGameRepository> mock = new Mock<IGameRepository>();
+
+            // Организация - создание контроллера
+            AdminController controller = new AdminController(mock.Object);
+
+            // Организация - создание объекта Game
+            Game game = new Game { Name = "Test" };
+
+            // Действие - попытка сохранения товара
+            ActionResult result = controller.Edit(game);
+
+            // Утверждение - проверка того, что к хранилищу производится обращение
+            mock.Verify(m => m.SaveGame(game));
+
+            // Утверждение - проверка типа результата метода
+            Assert.IsNotInstanceOfType(result, typeof(ViewResult));
+        }
+
+        [TestMethod]
+        public void Cannot_Save_Invalid_Changes()
+        {
+            // Организация - создание имитированного хранилища данных
+            Mock<IGameRepository> mock = new Mock<IGameRepository>();
+
+            // Организация - создание контроллера
+            AdminController controller = new AdminController(mock.Object);
+
+            // Организация - создание объекта Game
+            Game game = new Game { Name = "Test" };
+
+            // Организация - добавление ошибки в состояние модели
+            controller.ModelState.AddModelError("error", "error");
+
+            // Действие - попытка сохранения товара
+            ActionResult result = controller.Edit(game);
+
+            // Утверждение - проверка того, что обращение к хранилищу НЕ производится 
+            mock.Verify(m => m.SaveGame(It.IsAny<Game>()), Times.Never());
+
+            // Утверждение - проверка типа результата метода
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
     }
 }
