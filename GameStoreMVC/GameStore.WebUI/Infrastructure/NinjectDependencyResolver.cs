@@ -1,6 +1,8 @@
 ﻿using GameStore.Domain.Abstract;
 using GameStore.Domain.Concrete;
 using GameStore.Domain.Entities;
+using GameStore.WebUI.Infrastructure.Abstract;
+using GameStore.WebUI.Infrastructure.Concrete;
 using Moq;
 using Ninject;
 using System;
@@ -44,6 +46,7 @@ namespace GameStore.WebUI.Infrastructure
         //    kernel.Bind<IGameRepository>().ToConstant(mock.Object);
 
             kernel.Bind<IGameRepository>().To<EFGameRepository>();
+            kernel.Bind<IAuthProvider>().To<FormAuthProvider>();
 
             EmailSettings emailSettings = new EmailSettings
             {
