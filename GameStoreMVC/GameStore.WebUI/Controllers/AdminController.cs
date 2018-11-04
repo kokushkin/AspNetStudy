@@ -32,10 +32,16 @@ namespace GameStore.WebUI.Controllers
 
         // Перегруженная версия Edit() для сохранения изменений
         [HttpPost]
-        public ActionResult Edit(Game game)
+        public ActionResult Edit(Game game, HttpPostedFileBase image = null)
         {
             if (ModelState.IsValid)
             {
+                if (image != null)
+                {
+                    game.ImageMimeType = image.ContentType;
+                    game.ImageData = new byte[image.ContentLength];
+                    image.InputStream.Read(game.ImageData, 0, image.ContentLength);
+                }
                 repository.SaveGame(game);
                 TempData["message"] = string.Format("Изменения в игре \"{0}\" были сохранены", game.Name);
                 return RedirectToAction("Index");
