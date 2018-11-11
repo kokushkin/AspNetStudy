@@ -8,7 +8,7 @@ using System.Linq;
 using System.Web;
 using Users.Infrastructure;
 
-namespace Users.App_Start
+namespace Users
 {
     public class IdentityConfig
     {
