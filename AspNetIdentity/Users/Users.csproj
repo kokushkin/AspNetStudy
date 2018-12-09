@@ -156,6 +156,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ClaimsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RoleAdminController.cs" />
     <Compile Include="Global.asax.cs">
@@ -164,9 +165,25 @@
     <Compile Include="Infrastructure\AppIdentityDbContext.cs" />
     <Compile Include="Infrastructure\AppRoleManager.cs" />
     <Compile Include="Infrastructure\AppUserManager.cs" />
+    <Compile Include="Infrastructure\ClaimsAccessAttribute.cs" />
+    <Compile Include="Infrastructure\ClaimsRoles.cs" />
     <Compile Include="Infrastructure\CustomPasswordValidator.cs" />
     <Compile Include="Infrastructure\CustomUserValidator.cs" />
     <Compile Include="Infrastructure\IdentityHelpers.cs" />
+    <Compile Include="Infrastructure\LoacationClaimsProvide.cs" />
+    <Compile Include="Migrations\201811162112102_Init.cs" />
+    <Compile Include="Migrations\201811162112102_Init.Designer.cs">
+      <DependentUpon>201811162112102_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811162120584_CityProperty.cs" />
+    <Compile Include="Migrations\201811162120584_CityProperty.Designer.cs">
+      <DependentUpon>201811162120584_CityProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811162147475_CountryProperty.cs" />
+    <Compile Include="Migrations\201811162147475_CountryProperty.Designer.cs">
+      <DependentUpon>201811162147475_CountryProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppRole.cs" />
     <Compile Include="Models\AppUserModels.cs" />
     <Compile Include="Models\UserViewModels.cs" />
@@ -188,6 +205,7 @@
     <Content Include="Views\RoleAdmin\Create.cshtml" />
     <Content Include="Views\RoleAdmin\Edit.cshtml" />
     <Content Include="Views\Home\UserProps.cshtml" />
+    <Content Include="Views\Claims\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -197,6 +215,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811162112102_Init.resx">
+      <DependentUpon>201811162112102_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811162120584_CityProperty.resx">
+      <DependentUpon>201811162120584_CityProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811162147475_CountryProperty.resx">
+      <DependentUpon>201811162147475_CountryProperty.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
